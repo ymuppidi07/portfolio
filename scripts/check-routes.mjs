@@ -1,10 +1,10 @@
 import { readFile } from 'node:fs/promises';
 
 const projects = JSON.parse(await readFile(new URL('../content/projects.json', import.meta.url), 'utf8'));
-const routes = ['/', '/work/', '/work/zipline/', '/experience/', '/about/', '/assets/Yashwanth_Muppidi_Resume.pdf'];
+const routes = ['/', '/projects/', '/work/', '/experience/', '/about/', '/assets/Yashwanth_Muppidi_Resume.pdf'];
 
-for (const project of projects.filter((item) => item.status === 'visible')) {
-  routes.push(project.group === 'zipline' ? `/work/zipline/${project.slug}/` : `/work/${project.slug}/`);
+for (const project of projects.filter((item) => item.status === 'visible' && item.group !== 'zipline')) {
+  routes.push(`/projects/${project.slug}/`, `/work/${project.slug}/`);
 }
 
 const results = await Promise.all(routes.map(async (route) => {

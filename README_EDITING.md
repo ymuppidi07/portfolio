@@ -1,88 +1,125 @@
-# Editing your portfolio
+# Editing this portfolio
 
-You do not need to edit the website layout to update the portfolio. Almost all text and project information lives in two plain files:
+Routine content updates do not require React or layout code. This site is a small static site driven by two editable JSON files:
 
-- `content/site.json` — your name, introduction, About text, experience, education, links, and résumé path
-- `content/projects.json` — every personal, academic, and Zipline project
+- `content/site.json` — Home, About, Experience, navigation links, footer, and résumé path
+- `content/projects.json` — project cards, project order, project descriptions, and every project page
 
-JSON is picky about commas and quotation marks. Keep the existing punctuation pattern when you edit a value.
+JSON requires double quotation marks and commas between items. When editing, copy the punctuation pattern already in the file.
+
+## Where each kind of content lives
+
+| Content | Exact location |
+| --- | --- |
+| Homepage hero and short About Me text | `content/site.json` → `eyebrow`, `headline`, `disciplines`, and `home` |
+| Full About page | `content/site.json` → `aboutPage`, `about`, and `principles` |
+| Projects page heading | `content/site.json` → `projectsPage` |
+| Project titles and card descriptions | `content/projects.json` → each project's `title` and `summary` |
+| Project-page introductions and sections | `content/projects.json` → `lede`, `role`, `tools`, `media`, and `sections` |
+| Experience page | `content/site.json` → `experiencePage`, `experience`, and `education` |
+| Project images, galleries, and project videos | `public/media/<project-slug>/` |
+| Optional hero image | `public/media/hero/` |
+| Résumé PDF | `public/assets/Yashwanth_Muppidi_Resume.pdf` |
+
+The existing project media folders are:
+
+- `public/media/nemo/`
+- `public/media/ariel/`
+- `public/media/third-thumb/`
+- `public/media/vtol/`
+- `public/media/harry/`
+- `public/media/vex/`
+- `public/media/fountain-pen/`
 
 ## 1. Change text
 
-Open `content/site.json` for general site text or `content/projects.json` for project text. Change only the words between quotation marks, then save the file.
+Open `content/site.json` for general page text or `content/projects.json` for project text. Change the words between quotation marks and save.
 
-## 2. Replace an image
+Examples:
 
-Put the new image in the matching folder inside `public/images/`. Use short lowercase filenames without spaces, such as `nemo-knee-cad.webp`.
+- Homepage About Me paragraph: `content/site.json` → `home.aboutText`
+- Full About paragraphs: `content/site.json` → `about`
+- Experience entries: `content/site.json` → `experience`
+- NEMO description: `content/projects.json` → find `"slug": "nemo"`, then edit `summary`, `lede`, or `sections`
 
-In the project’s `media` list, change the `src` value to the new path:
+## 2. Replace an existing image
+
+The easiest method is to replace the file in `public/media/<project-slug>/` with a new file that has the same filename. No JSON change is needed.
+
+If the new filename is different, update its `src` value in `content/projects.json` too.
+
+## 3. Add a new image
+
+First copy the real image into the matching project folder. Then add it to the project in `content/projects.json`.
+
+To use it as the image on the Projects page card, add:
+
+```json
+"cover": {
+  "src": "/media/nemo/nemo-overview.webp",
+  "alt": "NEMO humanoid robot standing in the lab"
+}
+```
+
+To show images or video at the top of the project page, add items to the project's `media` list:
 
 ```json
 "media": [
   {
     "type": "image",
-    "src": "/images/nemo/nemo-knee-cad.webp",
-    "alt": "CAD view of the revised NEMO knee assembly",
-    "caption": "Revised knee assembly"
+    "src": "/media/nemo/nemo-overview.webp",
+    "alt": "NEMO humanoid robot standing in the lab",
+    "caption": "Current NEMO prototype"
   }
 ]
 ```
 
-Use `.webp` or `.jpg` for photos and renders when possible. Write a short, literal `alt` description for accessibility.
-
-## 3. Add images to a project
-
-Add another item inside the project’s `media` list. Put a comma between items:
-
-```json
-"media": [
-  {
-    "type": "image",
-    "src": "/images/vtol/airframe.webp",
-    "alt": "Assembled VTOL airframe on a workbench",
-    "caption": "Airframe assembly before systems integration"
-  },
-  {
-    "type": "image",
-    "src": "/images/vtol/tilt-mechanism.webp",
-    "alt": "Close view of the tilt-rotor mechanism",
-    "caption": "Tilt mechanism prototype"
-  }
-]
-```
-
-You can also add a `media` list to an individual section if an image belongs under a specific heading.
+To create a gallery inside a section, set that section's `layout` to `gallery` and add a `media` list to that section. Gallery images use the same project folder.
 
 ## 4. Add a video
 
-Copy an `.mp4` or `.webm` file into the project image folder, then add:
+Put the real `.mp4` or `.webm` file in the same project folder, then add:
 
 ```json
 {
   "type": "video",
-  "src": "/images/nemo/walking-test.mp4",
-  "caption": "Early walking test",
-  "autoplay": true
+  "src": "/media/nemo/walking-test.mp4",
+  "caption": "Walking test",
+  "autoplay": false
 }
 ```
 
-With `autoplay` set to `true`, the video plays silently and loops. Set it to `false` if you want normal video controls.
+Set `autoplay` to `true` for a muted, looping video. Keep it `false` for normal playback controls.
 
-## 5. Create a new project
+## 5. Add or change the optional hero image
+
+The current hero intentionally uses no image. To add one later, put the real image in `public/media/hero/`, then replace `"heroMedia": null` in `content/site.json` with:
+
+```json
+"heroMedia": {
+  "src": "/media/hero/hero-photo.webp",
+  "alt": "Short literal description of the real image"
+}
+```
+
+Change it back to `null` to remove the hero image.
+
+## 6. Add a new project
 
 1. Open `content/projects.json`.
-2. Copy one complete project object, including its opening and closing braces.
-3. Paste it after another project and add a comma between the two objects.
-4. Give it a unique lowercase `slug`, such as `new-gripper`.
-5. Update the title, group, dates, summary, tools, and sections.
-6. Create `public/images/new-gripper/` for its media.
-7. Run `npm run build`. The project page and its route are created automatically.
+2. Copy one complete project object, from its opening `{` to its closing `}`.
+3. Paste it between two other project objects and keep a comma between objects.
+4. Give it a unique lowercase `slug`, such as `robot-gripper`.
+5. Set `group` to `projects`, `status` to `visible`, and choose a `priority` number.
+6. Edit its title, description, page sections, and media.
+7. Create a matching folder such as `public/media/robot-gripper/`.
+8. Run `npm run build`. The card, project page, and URL are generated automatically.
 
-Use `"group": "projects"` for primary engineering projects, `"group": "additional"` for smaller older work, or `"group": "zipline"` for a Zipline project.
+No React editing is required.
 
-## 6. Delete or hide a project
+## 7. Delete or hide a project
 
-The safest choice is to hide it. Change:
+Hiding is safer than deleting. Find the project in `content/projects.json` and change:
 
 ```json
 "status": "visible"
@@ -94,61 +131,50 @@ to:
 "status": "hidden"
 ```
 
-Then run `npm run build`. To permanently delete it, remove the entire project object from `content/projects.json` and remove its image folder.
+Then run `npm run build`. To permanently delete it, remove the complete project object and its media folder.
 
-## 7. Reorder projects
+## 8. Reorder projects
 
-Change the `priority` number. Lower numbers appear first. Each project group is ordered separately.
+Change each project's `priority` number in `content/projects.json`. Lower numbers appear first. Run `npm run build` afterward.
 
-## 8. Feature a project on the homepage
+## 9. Update Ariel later
 
-Set:
+Find `"slug": "ariel"` in `content/projects.json`.
 
-```json
-"featured": true
-```
+1. Change `summary` and `lede` from `Work in Progress` to your real text.
+2. Change `projectState` from `work-in-progress` to `complete`.
+3. Add your real `year`, `organization`, `role`, and `tools` values.
+4. Add project-page objects inside `sections`.
+5. Put real Ariel media in `public/media/ariel/` and add `cover`, `media`, or section-level `media` entries.
+6. Run `npm run build`.
 
-Set it to `false` to remove the project from the large homepage selection. NEMO always receives the flagship treatment when visible.
+As long as you follow the existing JSON pattern, Ariel can be fully updated without editing React or JavaScript.
 
-## 9. Add another Zipline project
+## 10. Replace the résumé
 
-Copy either existing Zipline project object, give it a new unique `slug`, keep `"group": "zipline"`, and edit only with language and media approved for public use. Run `npm run build` to create its project page automatically.
+Replace `public/assets/Yashwanth_Muppidi_Resume.pdf` with the new PDF and keep the same filename. The Resume link will keep working.
 
-## 10. Edit Experience
+If you use a different filename, also update the `resume` value in `content/site.json`.
 
-Open `content/site.json` and find the `experience` list. Edit an existing entry or copy one to add another. A `link` is optional; use it to connect an experience to related work, such as `/work/nemo/`.
+## 11. Preview changes
 
-## 11. Edit About
-
-Open `content/site.json` and edit the two paragraphs under `about`. The three items under `principles` control the “How I work” section.
-
-## 12. Replace the résumé
-
-Replace `public/assets/Yashwanth_Muppidi_Resume.pdf` with your real PDF. Keep the same filename and the Resume link will continue to work everywhere. If you prefer another filename, update the `resume` value in `content/site.json` too.
-
-## 13. Preview changes locally
-
-Install Node.js if it is not already installed. Open a terminal in this folder, then run:
+From this repository folder, run:
 
 ```text
 npm run build
 npm run dev
 ```
 
-Open the local address printed in the terminal. Stop the preview with `Ctrl+C`.
+Open the local address shown in the terminal. Run `npm run build` again after content edits. The finished static site is generated in `dist/`.
 
-Run `npm run build` again after changing content. The finished static website is placed in `dist/`.
+## Available project-section layouts
 
-## Section layouts available
+- `text` — written section
+- `diagram` — structured subsystem list
+- `steps` — numbered process
+- `media` — image or video area
+- `gallery` — multiple images or videos
+- `split` — paired media layout
+- `results` — verified result values
 
-Each case-study section has a `layout` value. You can use:
-
-- `text` — short written section
-- `diagram` — a structured list of connected subsystems
-- `steps` — numbered design or test sequence
-- `media` — large image or video area
-- `gallery` — several images or videos
-- `split` — media intended for a paired layout
-- `results` — verified results or metrics
-
-Delete a section you do not need. Copy a section to add another one. The page builds from the list automatically.
+Copy a section object to add a section, or remove a complete section object to delete one. The page layout is generated automatically.

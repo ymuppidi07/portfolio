@@ -11,16 +11,22 @@ const projects = JSON.parse(await readFile(fromRoot('content/projects.json'), 'u
 
 const pages = [
   { path: '', page: 'home', title: 'Yashwanth Muppidi — Mechanical Engineer' },
-  { path: 'work', page: 'work', title: 'Work — Yashwanth Muppidi' },
-  { path: 'work/zipline', page: 'zipline', title: 'Zipline — Yashwanth Muppidi' },
+  { path: 'projects', page: 'projects', title: 'Projects — Yashwanth Muppidi' },
+  { path: 'work', page: 'projects', title: 'Projects — Yashwanth Muppidi' },
   { path: 'experience', page: 'experience', title: 'Experience — Yashwanth Muppidi' },
   { path: 'about', page: 'about', title: 'About — Yashwanth Muppidi' },
   { path: '404', page: '404', title: 'Not Found — Yashwanth Muppidi' }
 ];
 
-for (const project of projects.filter((item) => item.status === 'visible')) {
+for (const project of projects.filter((item) => item.status === 'visible' && item.group !== 'zipline')) {
   pages.push({
-    path: project.group === 'zipline' ? `work/zipline/${project.slug}` : `work/${project.slug}`,
+    path: `projects/${project.slug}`,
+    page: 'project',
+    slug: project.slug,
+    title: `${project.title} — Yashwanth Muppidi`
+  });
+  pages.push({
+    path: `work/${project.slug}`,
     page: 'project',
     slug: project.slug,
     title: `${project.title} — Yashwanth Muppidi`

@@ -6,9 +6,41 @@
   "intro": "Mechanical engineer working across humanoid robotics, product development, mechatronics, and autonomous systems.",
   "location": "Purdue University · West Lafayette, Indiana",
   "disciplines": ["Humanoid Robotics", "Mechanical Design", "Mechatronics", "Autonomous Systems"],
+  "home": {
+    "portfolioLabel": "Portfolio / 2026",
+    "locationLabel": "West Lafayette, IN",
+    "heroName": ["Yashwanth", "Muppidi"],
+    "heroMedia": null,
+    "aboutEyebrow": "About Me",
+    "aboutTitle": "Mechanical design for robots, products, and autonomous systems.",
+    "aboutText": "I’m a mechanical engineering student at Purdue University. I work across mechanism design, prototyping, fabrication, testing, and system integration, with a focus on hardware that has to perform reliably in the real world.",
+    "primaryCta": "View projects",
+    "secondaryCta": "More about me"
+  },
+  "projectsPage": {
+    "eyebrow": "Projects",
+    "headline": "Engineering work, organized by project.",
+    "intro": "Browse robotics, aircraft, wearable mechanisms, product design, and competition builds. Each project opens to its own editable page."
+  },
+  "experiencePage": {
+    "eyebrow": "Experience",
+    "headline": "Hardware, developed close to the system.",
+    "intro": "Professional and team experience across autonomous aircraft, surgical robotics, medical devices, and humanoid systems."
+  },
+  "aboutPage": {
+    "eyebrow": "About",
+    "headline": "Mechanical thinking. System-level view.",
+    "approachEyebrow": "Approach",
+    "approachTitle": "How I work",
+    "locationText": "Currently based at Purdue University in West Lafayette, Indiana."
+  },
   "contact": "https://www.linkedin.com/in/yashwanth-muppidi",
   "linkedin": "https://www.linkedin.com/in/yashwanth-muppidi",
   "resume": "/assets/Yashwanth_Muppidi_Resume.pdf",
+  "footer": {
+    "prompt": "Have a hardware problem worth solving?",
+    "cta": "Get in touch"
+  },
   "about": [
     "I am a mechanical engineering student at Purdue University, focused on the hardware that lets robotic and autonomous systems operate outside the lab.",
     "My work spans mechanism design, prototyping, test hardware, fabrication, and system integration. I am most interested in the point where careful mechanical decisions become reliable physical behavior."
@@ -26,7 +58,7 @@
       "location": "South San Francisco, California",
       "summary": "Designed and tested hardware for autonomous aircraft operations, spanning deployment equipment, test fixtures, and reliability work.",
       "highlights": ["Cross-functional hardware development", "Field-deployment and test equipment", "Structural, thermal, and reliability testing"],
-      "link": "/work/zipline/"
+      "link": ""
     },
     {
       "company": "Johnson & Johnson",
@@ -43,7 +75,7 @@
       "location": "West Lafayette, Indiana",
       "summary": "Leading mechanical development for NEMO, a bipedal humanoid robotics platform.",
       "highlights": ["Mechanical architecture", "Team coordination", "Fabrication and system integration"],
-      "link": "/work/nemo/"
+      "link": "/projects/nemo/"
     }
   ],
   "education": {
