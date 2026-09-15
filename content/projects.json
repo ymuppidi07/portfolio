@@ -1,0 +1,179 @@
+[
+  {
+    "slug": "nemo",
+    "title": "NEMO Humanoid Robot",
+    "shortTitle": "NEMO",
+    "group": "projects",
+    "status": "visible",
+    "featured": true,
+    "priority": 1,
+    "year": "2024 — Present",
+    "organization": "Humanoid Robot Club Purdue",
+    "role": "Project Manager · Mechanical Design",
+    "summary": "A bipedal humanoid platform developed from mechanical architecture through fabrication, simulation, and integrated testing.",
+    "lede": "Designing the physical platform for a student-built bipedal humanoid—and the iteration loop required to make it walk.",
+    "tools": ["CAD", "FEA", "MuJoCo", "ROS 2", "Fabrication", "Testing"],
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Challenge", "layout": "text", "text": "NEMO brings structure, actuation, electronics, controls, and dynamic behavior into one tightly coupled system. This section is ready for the latest project objective, design targets, and operating constraints."},
+      {"index": "02", "title": "System Architecture", "layout": "diagram", "text": "Use this section to explain how the mechanical, electrical, and control subsystems connect without exposing unnecessary implementation detail.", "items": ["Structure & joints", "Actuation", "Compute & controls", "Power & electronics"]},
+      {"index": "03", "title": "Mechanical Design", "layout": "media", "text": "Add current CAD renders, exploded assemblies, mechanism details, and concise decisions here."},
+      {"index": "04", "title": "Design Iteration", "layout": "steps", "text": "Show the engineering progression rather than only the final form.", "items": ["Initial architecture", "Prototype findings", "Mechanical redesign", "Integrated revision"]},
+      {"index": "05", "title": "Engineering Analysis", "layout": "media", "text": "A flexible area for load cases, FEA, mass-property studies, tolerance work, or other analysis."},
+      {"index": "06", "title": "Simulation", "layout": "split", "text": "Pair simulation footage and results with only the context needed to understand what was learned."},
+      {"index": "07", "title": "Fabrication & Testing", "layout": "gallery", "text": "Document manufacturing, assembly, test setups, failures, and fixes as a visual sequence."},
+      {"index": "08", "title": "Results", "layout": "results", "text": "Add verified outcomes and current system status when the latest material is ready.", "items": []}
+    ]
+  },
+  {
+    "slug": "third-thumb",
+    "title": "Third Thumb",
+    "shortTitle": "Third Thumb",
+    "group": "projects",
+    "status": "visible",
+    "featured": true,
+    "priority": 2,
+    "year": "2024",
+    "organization": "Academic Project",
+    "role": "Mechanical Design · Mechatronics",
+    "summary": "A wearable mechatronic system exploring an additional controllable digit.",
+    "lede": "A compact wearable mechanism at the intersection of human factors, mechanical design, and control.",
+    "tools": ["CAD", "Rapid Prototyping", "Embedded Systems", "Testing"],
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Design Problem", "layout": "text", "text": "Frame the user need, desired motion, comfort considerations, and technical constraints here."},
+      {"index": "02", "title": "Mechanism", "layout": "media", "text": "Add mechanism studies, attachment geometry, routing, and component packaging."},
+      {"index": "03", "title": "Prototyping", "layout": "steps", "text": "Use a short visual sequence to show how fit, motion, and controllability changed through testing.", "items": ["Form study", "Motion prototype", "Wearable integration", "User testing"]},
+      {"index": "04", "title": "Outcome", "layout": "results", "text": "Reserve this area for validated performance and learning."}
+    ]
+  },
+  {
+    "slug": "vtol",
+    "title": "Tilt-Rotor VTOL Aircraft",
+    "shortTitle": "VTOL",
+    "group": "projects",
+    "status": "visible",
+    "featured": true,
+    "priority": 3,
+    "year": "2024",
+    "organization": "Purdue Aerial Robotics Team",
+    "role": "Mechanical Engineering",
+    "summary": "A tilt-rotor vertical takeoff and landing aircraft developed for a payload-drop mission.",
+    "lede": "Developing an aircraft architecture that transitions between vertical lift and forward flight around a defined mission.",
+    "tools": ["CAD", "Airframe Design", "Prototyping", "Flight Testing"],
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Mission", "layout": "text", "text": "Introduce the payload-drop mission, flight phases, and the requirements that shaped the vehicle."},
+      {"index": "02", "title": "Aircraft Architecture", "layout": "diagram", "text": "Show the relationship between lift, tilt mechanism, airframe, payload, avionics, and control surfaces.", "items": ["Tilt mechanism", "Airframe", "Propulsion", "Payload system"]},
+      {"index": "03", "title": "Mechanical Development", "layout": "gallery", "text": "Add CAD, fabrication, and assembly media with concise engineering captions."},
+      {"index": "04", "title": "Test & Iteration", "layout": "results", "text": "Document verified test results and the design changes they produced."}
+    ]
+  },
+  {
+    "slug": "harry",
+    "title": "H.A.R.R.Y.",
+    "shortTitle": "H.A.R.R.Y.",
+    "group": "additional",
+    "status": "visible",
+    "featured": false,
+    "priority": 4,
+    "year": "2022 — 2023",
+    "organization": "Independent Project",
+    "role": "Mechanical Design · Robotics",
+    "summary": "An early articulated robot built to explore human-like movement and task assistance.",
+    "lede": "An early robotics project centered on translating human movement into a physical prototype.",
+    "tools": ["CAD", "Fabrication", "Electronics", "Programming"],
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Concept", "layout": "text", "text": "Describe the intended tasks and the original mechanical concept."},
+      {"index": "02", "title": "Build", "layout": "gallery", "text": "Add prototype, assembly, and testing images."},
+      {"index": "03", "title": "Learning", "layout": "results", "text": "Summarize what this early system taught you and how it informed later robotics work."}
+    ]
+  },
+  {
+    "slug": "vex",
+    "title": "Competition Robot / VEX",
+    "shortTitle": "VEX Robotics",
+    "group": "additional",
+    "status": "visible",
+    "featured": false,
+    "priority": 5,
+    "year": "2021 — 2023",
+    "organization": "VEX Robotics Competition",
+    "role": "Mechanical Design · Build",
+    "summary": "Competition robots developed around fast intake, launch, lift, and endgame mechanisms.",
+    "lede": "Designing mechanisms under strict game, time, packaging, and reliability constraints.",
+    "tools": ["Mechanism Design", "Pneumatics", "Fabrication", "Competition Testing"],
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Game Constraints", "layout": "text", "text": "Introduce the scoring objectives and constraints that drove the robot architecture."},
+      {"index": "02", "title": "Mechanisms", "layout": "diagram", "text": "Organize intake, launch, lift, and endgame systems into a clear mechanical story.", "items": ["Intake", "Indexer", "Flywheel", "Expansion system"]},
+      {"index": "03", "title": "Competition", "layout": "results", "text": "Add confirmed event results, rankings, and the iteration between competitions."}
+    ]
+  },
+  {
+    "slug": "fountain-pen",
+    "title": "Fountain Pen",
+    "shortTitle": "Fountain Pen",
+    "group": "additional",
+    "status": "visible",
+    "featured": false,
+    "priority": 6,
+    "year": "2023",
+    "organization": "Team Project",
+    "role": "Product Design",
+    "summary": "A compact drinking-water filtration concept designed around public fountain use.",
+    "lede": "A product concept exploring access to filtered water through a small, portable form factor.",
+    "tools": ["Product Design", "Prototyping", "Team Development"],
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Need", "layout": "text", "text": "Explain the use context and the design requirements derived from it."},
+      {"index": "02", "title": "Product Development", "layout": "gallery", "text": "Add concept sketches, form studies, prototypes, and filter architecture."},
+      {"index": "03", "title": "Outcome", "layout": "results", "text": "Add verified testing and team outcomes when available."}
+    ]
+  },
+  {
+    "slug": "field-deployment-hardware",
+    "title": "Field Deployment Hardware",
+    "shortTitle": "Deployment Hardware",
+    "group": "zipline",
+    "status": "visible",
+    "featured": false,
+    "priority": 1,
+    "year": "2026",
+    "organization": "Zipline",
+    "role": "Mechanical Engineering Intern",
+    "summary": "A case-study framework for approved field hardware work. Technical details intentionally withheld until cleared for publication.",
+    "lede": "Mechanical hardware designed around transport, setup, handling, and real-world deployment constraints.",
+    "tools": ["Mechanical Design", "Prototyping", "Field Hardware"],
+    "confidential": true,
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Context", "layout": "text", "text": "Add only company-approved context and the problem boundary you can discuss publicly."},
+      {"index": "02", "title": "Design Contribution", "layout": "media", "text": "Use sanitized diagrams, public photography, or process descriptions as permitted."},
+      {"index": "03", "title": "Validation", "layout": "results", "text": "Describe the test approach and approved outcomes without exposing proprietary data."}
+    ]
+  },
+  {
+    "slug": "test-reliability-fixtures",
+    "title": "Test & Reliability Fixtures",
+    "shortTitle": "Test Fixtures",
+    "group": "zipline",
+    "status": "visible",
+    "featured": false,
+    "priority": 2,
+    "year": "2026",
+    "organization": "Zipline",
+    "role": "Mechanical Engineering Intern",
+    "summary": "A case-study framework for approved structural, thermal, and production-test work. Details intentionally remain high-level.",
+    "lede": "Fixtures and test hardware built to make product behavior measurable, repeatable, and actionable.",
+    "tools": ["Fixture Design", "Reliability Testing", "Hardware Validation"],
+    "confidential": true,
+    "media": [],
+    "sections": [
+      {"index": "01", "title": "Test Objective", "layout": "text", "text": "State the test question and public constraints without identifying proprietary systems."},
+      {"index": "02", "title": "Fixture Development", "layout": "steps", "text": "Show the development process at an approved level of abstraction.", "items": ["Test definition", "Fixture concept", "Build & instrumentation", "Repeatability check"]},
+      {"index": "03", "title": "Engineering Value", "layout": "results", "text": "Connect the work to quality, reliability, or development speed using only approved outcomes."}
+    ]
+  }
+]

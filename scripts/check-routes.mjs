@@ -1,0 +1,17 @@
+import { readFile } from 'node:fs/promises';
+
+const projects = JSON.parse(await readFile(new URL('../content/projects.json', import.meta.url), 'utf8'));
+const routes = ['/', '/work/', '/work/zipline/', '/experience/', '/about/', '/assets/Yashwanth_Muppidi_Resume.pdf'];
+
+for (const project of projects.filter((item) => item.status === 'visible')) {
+  routes.push(project.group === 'zipline' ? `/work/zipline/${project.slug}/` : `/work/${project.slug}/`);
+}
+
+const results = await Promise.all(routes.map(async (route) => {
+  const response = await fetch(`http://127.0.0.1:4173${route}`);
+  return { route, status: response.status, ok: response.ok };
+}));
+
+const failures = results.filter((result) => !result.ok);
+for (const result of results) console.log(`${result.status} ${result.route}`);
+if (failures.length) process.exitCode = 1;

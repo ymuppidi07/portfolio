@@ -1,0 +1,54 @@
+{
+  "name": "Yashwanth Muppidi",
+  "shortName": "YM",
+  "eyebrow": "Mechanical Engineering / Robotics",
+  "headline": "Building machines that move through the real world.",
+  "intro": "Mechanical engineer working across humanoid robotics, product development, mechatronics, and autonomous systems.",
+  "location": "Purdue University · West Lafayette, Indiana",
+  "disciplines": ["Humanoid Robotics", "Mechanical Design", "Mechatronics", "Autonomous Systems"],
+  "contact": "https://www.linkedin.com/in/yashwanth-muppidi",
+  "linkedin": "https://www.linkedin.com/in/yashwanth-muppidi",
+  "resume": "/assets/Yashwanth_Muppidi_Resume.pdf",
+  "about": [
+    "I am a mechanical engineering student at Purdue University, focused on the hardware that lets robotic and autonomous systems operate outside the lab.",
+    "My work spans mechanism design, prototyping, test hardware, fabrication, and system integration. I am most interested in the point where careful mechanical decisions become reliable physical behavior."
+  ],
+  "principles": [
+    {"title": "Design for the system", "text": "Mechanical decisions are made with controls, electronics, assembly, and field use in view."},
+    {"title": "Build to learn", "text": "Prototypes, fixtures, and tests turn assumptions into evidence early."},
+    {"title": "Make it legible", "text": "Clear interfaces, drawings, and documentation are part of the engineering work."}
+  ],
+  "experience": [
+    {
+      "company": "Zipline",
+      "role": "Mechanical Engineering Intern",
+      "dates": "2026",
+      "location": "South San Francisco, California",
+      "summary": "Designed and tested hardware for autonomous aircraft operations, spanning deployment equipment, test fixtures, and reliability work.",
+      "highlights": ["Cross-functional hardware development", "Field-deployment and test equipment", "Structural, thermal, and reliability testing"],
+      "link": "/work/zipline/"
+    },
+    {
+      "company": "Johnson & Johnson",
+      "role": "Robotics & Medical Device R&D Intern",
+      "dates": "2025",
+      "location": "United States",
+      "summary": "Supported surgical robotics and medical-device development through end-effector prototyping, embedded controls, assembly fixtures, and testing.",
+      "highlights": ["Robotic end-effector prototyping", "Embedded control systems", "Assembly and verification fixtures"]
+    },
+    {
+      "company": "Humanoid Robot Club Purdue",
+      "role": "Robot Legs Project Manager",
+      "dates": "2024 — Present",
+      "location": "West Lafayette, Indiana",
+      "summary": "Leading mechanical development for NEMO, a bipedal humanoid robotics platform.",
+      "highlights": ["Mechanical architecture", "Team coordination", "Fabrication and system integration"],
+      "link": "/work/nemo/"
+    }
+  ],
+  "education": {
+    "school": "Purdue University",
+    "program": "B.S. Mechanical Engineering",
+    "dates": "2023 — 2027"
+  }
+}
