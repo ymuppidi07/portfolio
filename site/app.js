@@ -3,6 +3,13 @@ const main = document.querySelector('#main');
 const header = document.querySelector('#site-header');
 const footer = document.querySelector('#site-footer');
 
+if (['127.0.0.1', 'localhost'].includes(window.location.hostname) && 'EventSource' in window) {
+  const liveReload = new EventSource('/__live-reload');
+  liveReload.addEventListener('message', (event) => {
+    if (event.data === 'reload') window.location.reload();
+  });
+}
+
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('<', '&lt;')

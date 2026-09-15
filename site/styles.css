@@ -553,3 +553,5 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Changes to this file are rebuilt automatically by the local live preview. */

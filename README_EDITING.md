@@ -113,7 +113,7 @@ Change it back to `null` to remove the hero image.
 5. Set `group` to `projects`, `status` to `visible`, and choose a `priority` number.
 6. Edit its title, description, page sections, and media.
 7. Create a matching folder such as `public/media/robot-gripper/`.
-8. Run `npm run build`. The card, project page, and URL are generated automatically.
+8. Save the file. If `npm run dev` is running, the card, project page, and URL are generated automatically.
 
 No React editing is required.
 
@@ -131,11 +131,11 @@ to:
 "status": "hidden"
 ```
 
-Then run `npm run build`. To permanently delete it, remove the complete project object and its media folder.
+Save the file and the live preview will update automatically. To permanently delete it, remove the complete project object and its media folder.
 
 ## 8. Reorder projects
 
-Change each project's `priority` number in `content/projects.json`. Lower numbers appear first. Run `npm run build` afterward.
+Change each project's `priority` number in `content/projects.json`. Lower numbers appear first. Save the file to update the live preview.
 
 ## 9. Update Ariel later
 
@@ -146,7 +146,7 @@ Find `"slug": "ariel"` in `content/projects.json`.
 3. Add your real `year`, `organization`, `role`, and `tools` values.
 4. Add project-page objects inside `sections`.
 5. Put real Ariel media in `public/media/ariel/` and add `cover`, `media`, or section-level `media` entries.
-6. Run `npm run build`.
+6. Save the file to update the live preview.
 
 As long as you follow the existing JSON pattern, Ariel can be fully updated without editing React or JavaScript.
 
@@ -161,11 +161,19 @@ If you use a different filename, also update the `resume` value in `content/site
 From this repository folder, run:
 
 ```text
-npm run build
 npm run dev
 ```
 
-Open the local address shown in the terminal. Run `npm run build` again after content edits. The finished static site is generated in `dist/`.
+Open the local address shown in the terminal. Keep that terminal running while you edit.
+
+Saving either content JSON file, the stylesheet, JavaScript, or anything under `public/` now automatically:
+
+1. Rebuilds the site.
+2. Refreshes the browser.
+
+You no longer need to run `npm run build` after every edit. Press `Ctrl+C` in the running terminal when you are finished. Use `npm run build` by itself only when you want to generate the finished static site without starting the live preview.
+
+If `npm` is not available in your terminal, use `node scripts/serve.mjs` instead. It provides the same live editing behavior. If port `4173` is already occupied, the preview automatically selects the next available port and prints the correct address.
 
 ## Available project-section layouts
 
