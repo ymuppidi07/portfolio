@@ -168,7 +168,7 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
 }
 .hero h1 span { display: block; }
 .hero h1 span:last-child { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.7); }
-.hero-statement { max-width: 31rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.75rem); line-height: 1.25; letter-spacing: -.025em; }
+.hero-statement { max-width: 31rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.75rem); line-height: 1.25; letter-spacing: -.025em; white-space: pre-line; }
 
 .hero-spec {
   position: relative;
