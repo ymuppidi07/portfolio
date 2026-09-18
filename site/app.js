@@ -44,7 +44,6 @@ const renderHeader = (site) => {
         <a ${page === 'home' ? 'aria-current="page"' : ''} href="/">Home</a>
         <a ${['projects', 'project'].includes(page) ? 'aria-current="page"' : ''} href="/projects/">Projects</a>
         <a ${page === 'experience' ? 'aria-current="page"' : ''} href="/experience/">Experience</a>
-        <a ${page === 'about' ? 'aria-current="page"' : ''} href="/about/">About</a>
         <a class="nav-resume" href="${escapeHtml(site.resume)}" target="_blank" rel="noreferrer">Resume ${arrow}</a>
       </nav>
     </div>`;
@@ -121,13 +120,18 @@ const renderHome = (site) => {
 
     <section class="home-about section-light page-pad">
       <div class="home-about__label reveal"><span class="section-number">01</span><p class="eyebrow">${escapeHtml(home.aboutEyebrow)}</p></div>
-      <div class="home-about__copy reveal">
-        <h2>${escapeHtml(home.aboutTitle)}</h2>
-        <p>${escapeHtml(home.aboutText)}</p>
+      <div class="home-about__portrait is-empty reveal" data-profile-image>
+        <span>${escapeHtml(home.profileImage?.placeholder || 'Profile photo')}</span>
+        ${home.profileImage?.src ? `<img src="${escapeHtml(home.profileImage.src)}" alt="${escapeHtml(home.profileImage.alt || '')}" loading="lazy" hidden />` : ''}
       </div>
-      <div class="home-about__actions reveal">
-        <a class="button-link button-link--primary" href="/projects/">${escapeHtml(home.primaryCta)} ${arrow}</a>
-        <a class="button-link" href="/about/">${escapeHtml(home.secondaryCta)} ${arrow}</a>
+      <div class="home-about__content reveal">
+        <div class="home-about__copy">
+          <h2>${escapeHtml(home.aboutTitle)}</h2>
+          ${home.aboutText ? `<p>${escapeHtml(home.aboutText)}</p>` : ''}
+        </div>
+        <div class="home-about__actions">
+          <a class="button-link button-link--primary" href="/projects/">${escapeHtml(home.primaryCta)} ${arrow}</a>
+        </div>
       </div>
     </section>`;
 };
@@ -161,7 +165,7 @@ const renderExperience = (site) => {
           <div class="experience-index">${String(index + 1).padStart(2, '0')}</div>
           <div class="experience-title"><h2>${escapeHtml(item.company)}</h2><p>${escapeHtml(item.role)}</p></div>
           <div class="experience-details">
-            <div class="experience-meta"><span>${escapeHtml(item.dates)}</span><span>${escapeHtml(item.location)}</span></div>
+            <div class="experience-meta"><span>${escapeHtml(item.dates)}</span>${item.location ? `<span>${escapeHtml(item.location)}</span>` : ''}</div>
             <p>${escapeHtml(item.summary)}</p>
             <ul>${item.highlights.map((highlight) => `<li>${escapeHtml(highlight)}</li>`).join('')}</ul>
             ${item.link ? `<a class="text-link" href="${escapeHtml(item.link)}">Related project ${arrow}</a>` : ''}
@@ -170,21 +174,6 @@ const renderExperience = (site) => {
       <article class="education-card reveal">
         <span>Education</span><h2>${escapeHtml(site.education.school)}</h2><p>${escapeHtml(site.education.program)}</p><strong>${escapeHtml(site.education.dates)}</strong>
       </article>
-    </section>`;
-};
-
-const renderAbout = (site) => {
-  const page = site.aboutPage;
-  main.innerHTML = `
-    <section class="about-hero section-dark page-pad">
-      <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
-      <h1>${escapeHtml(page.headline)}</h1>
-      <div class="about-copy">${site.about.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div>
-    </section>
-    <section class="principles section-light page-pad">
-      <div class="section-heading section-heading--compact"><div><span class="section-number">01</span><p class="eyebrow">${escapeHtml(page.approachEyebrow)}</p></div><h2>${escapeHtml(page.approachTitle)}</h2></div>
-      <div class="principles-grid">${site.principles.map((item, index) => `<article class="reveal"><span>0${index + 1}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.text)}</p></article>`).join('')}</div>
-      <div class="about-contact reveal"><p>${escapeHtml(page.locationText)}</p><a class="button-link" href="${escapeHtml(site.contact)}" target="_blank" rel="noreferrer">Start a conversation ${arrow}</a></div>
     </section>`;
 };
 
@@ -279,6 +268,23 @@ const initReveal = () => {
   elements.forEach((element) => observer.observe(element));
 };
 
+const initProfileImage = () => {
+  const frame = document.querySelector('[data-profile-image]');
+  const image = frame?.querySelector('img');
+  if (!frame || !image) return;
+  const showImage = () => {
+    image.hidden = false;
+    frame.classList.remove('is-empty');
+  };
+  const showPlaceholder = () => {
+    image.hidden = true;
+    frame.classList.add('is-empty');
+  };
+  image.addEventListener('load', showImage, { once: true });
+  image.addEventListener('error', showPlaceholder, { once: true });
+  if (image.complete) (image.naturalWidth ? showImage : showPlaceholder)();
+};
+
 try {
   const { site, projects } = await loadData();
   renderHeader(site);
@@ -287,9 +293,9 @@ try {
   if (page === 'home') renderHome(site);
   else if (page === 'projects') renderProjects(site, projects);
   else if (page === 'experience') renderExperience(site);
-  else if (page === 'about') renderAbout(site);
   else if (page === 'project') renderProject(projects);
   else renderNotFound();
+  initProfileImage();
   initReveal();
 } catch (error) {
   console.error(error);

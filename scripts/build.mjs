@@ -14,7 +14,6 @@ const pages = [
   { path: 'projects', page: 'projects', title: 'Projects — Yashwanth Muppidi' },
   { path: 'work', page: 'projects', title: 'Projects — Yashwanth Muppidi' },
   { path: 'experience', page: 'experience', title: 'Experience — Yashwanth Muppidi' },
-  { path: 'about', page: 'about', title: 'About — Yashwanth Muppidi' },
   { path: '404', page: '404', title: 'Not Found — Yashwanth Muppidi' }
 ];
 

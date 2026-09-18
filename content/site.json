@@ -2,20 +2,23 @@
   "name": "Yashwanth Muppidi",
   "shortName": "YM",
   "eyebrow": "Mechanical Engineering",
-  "headline": "Prev. @ Zipline, J&J MedTech, DuPont\nHumanoid Robotics Club Head of Engineering",
+  "headline": "ME Intern @ Zipline, J&J MedTech, DuPont\nPurdue Humanoid Robotics Club Head of Engineering",
   "intro": "Mechanical engineer working across humanoid robotics, product development, mechatronics, and autonomous systems.",
   "location": "Purdue University · West Lafayette, Indiana",
   "disciplines": ["Robotics", "Hardware Design", "Product Development", "Test & Validation"],
   "home": {
-    "portfolioLabel": "Portfolio / 2026",
-    "locationLabel": "West Lafayette, IN",
+    "portfolioLabel": "Portfolio",
+    "locationLabel": "USA",
     "heroName": ["Yashwanth", "Muppidi"],
     "heroMedia": null,
+    "profileImage": {
+      "src": "/images/profile.jpg",
+      "alt": "Portrait of Yashwanth Muppidi",
+      "placeholder": "Profile photo"
+    },
     "aboutEyebrow": "About Me",
-    "aboutTitle": "Mechanical design for robots, products, and autonomous systems.",
-    "aboutText": "I’m a mechanical engineering student at Purdue University with experience across humanoid robotics and UAV hardware to surgical robotics and manufacturing. ",
-    "primaryCta": "View projects",
-    "secondaryCta": "More about me"
+    "aboutTitle": "I’m a mechanical engineering student at Purdue University with experience across humanoid robotics and UAV hardware to surgical robotics and manufacturing. ",
+    "primaryCta": "View projects"
   },
   "projectsPage": {
     "eyebrow": "Projects",
@@ -27,29 +30,13 @@
     "headline": "Hardware, developed close to the system.",
     "intro": "Professional and team experience across autonomous aircraft, surgical robotics, medical devices, and humanoid systems."
   },
-  "aboutPage": {
-    "eyebrow": "About",
-    "headline": "Mechanical thinking. System-level view.",
-    "approachEyebrow": "Approach",
-    "approachTitle": "How I work",
-    "locationText": "Currently based at Purdue University in West Lafayette, Indiana."
-  },
   "contact": "https://www.linkedin.com/in/yashwanth-muppidi",
   "linkedin": "https://www.linkedin.com/in/yashwanth-muppidi",
   "resume": "/assets/Yashwanth_Muppidi_Resume.pdf",
   "footer": {
-    "prompt": "Have a hardware problem worth solving?",
+    "prompt": "Email: ymuppidi07@gmail.com\nPhone: +1 (848) 667-6188",
     "cta": "Get in touch"
   },
-  "about": [
-    "I am a mechanical engineering student at Purdue University, focused on the hardware that lets robotic and autonomous systems operate outside the lab.",
-    "My work spans mechanism design, prototyping, test hardware, fabrication, and system integration. I am most interested in the point where careful mechanical decisions become reliable physical behavior."
-  ],
-  "principles": [
-    {"title": "Design for the system", "text": "Mechanical decisions are made with controls, electronics, assembly, and field use in view."},
-    {"title": "Build to learn", "text": "Prototypes, fixtures, and tests turn assumptions into evidence early."},
-    {"title": "Make it legible", "text": "Clear interfaces, drawings, and documentation are part of the engineering work."}
-  ],
   "experience": [
     {
       "company": "Zipline",
@@ -61,7 +48,7 @@
       "link": ""
     },
     {
-      "company": "Johnson & Johnson",
+      "company": "Johnson & Johnson MedTech",
       "role": "Robotics & Medical Device R&D Intern",
       "dates": "2025",
       "location": "New Jersey, USA",
@@ -69,7 +56,15 @@
       "highlights": ["Robotic end-effector prototyping", "Embedded control systems", "Assembly and verification fixtures"]
     },
     {
-      "company": "Humanoid Robot Club Purdue",
+      "company": "DuPont",
+      "role": "Mechanical Engineering Intern",
+      "dates": "05/2024 – 08/2024",
+      "location": "",
+      "summary": "Developed mechanical systems and production equipment for high-load and high-temperature applications, improving reliability and manufacturability.",
+      "highlights": ["Mechanical systems and production equipment", "High-load and high-temperature applications", "Reliability and manufacturability"]
+    },
+    {
+      "company": "Humanoid Robotics Club @ Purdue",
       "role": "Head of Engineering",
       "dates": "2024 — Present",
       "location": "Indiana, USA",

@@ -2,7 +2,7 @@
 
 Routine content updates do not require React or layout code. This site is a small static site driven by two editable JSON files:
 
-- `content/site.json` — Home, About, Experience, navigation links, footer, and résumé path
+- `content/site.json` — Home, Experience, navigation links, footer, and résumé path
 - `content/projects.json` — project cards, project order, project descriptions, and every project page
 
 JSON requires double quotation marks and commas between items. When editing, copy the punctuation pattern already in the file.
@@ -12,7 +12,7 @@ JSON requires double quotation marks and commas between items. When editing, cop
 | Content | Exact location |
 | --- | --- |
 | Homepage hero and short About Me text | `content/site.json` → `eyebrow`, `headline`, `disciplines`, and `home` |
-| Full About page | `content/site.json` → `aboutPage`, `about`, and `principles` |
+| Homepage profile photo | `public/images/profile.jpg` |
 | Projects page heading | `content/site.json` → `projectsPage` |
 | Project titles and card descriptions | `content/projects.json` → each project's `title` and `summary` |
 | Project-page introductions and sections | `content/projects.json` → `lede`, `role`, `tools`, `media`, and `sections` |
@@ -37,8 +37,7 @@ Open `content/site.json` for general page text or `content/projects.json` for pr
 
 Examples:
 
-- Homepage About Me paragraph: `content/site.json` → `home.aboutText`
-- Full About paragraphs: `content/site.json` → `about`
+- Homepage About Me heading and introduction: `content/site.json` → `home.aboutEyebrow` and `home.aboutTitle`
 - Experience entries: `content/site.json` → `experience`
 - NEMO description: `content/projects.json` → find `"slug": "nemo"`, then edit `summary`, `lede`, or `sections`
 
@@ -47,6 +46,8 @@ Examples:
 The easiest method is to replace the file in `public/media/<project-slug>/` with a new file that has the same filename. No JSON change is needed.
 
 If the new filename is different, update its `src` value in `content/projects.json` too.
+
+For the homepage profile photo, add or replace `public/images/profile.jpg`. Keep that filename and the photo updates without any JSON or JavaScript changes. Until the file exists, the homepage shows a neutral text placeholder.
 
 ## 3. Add a new image
 
