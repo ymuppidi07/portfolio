@@ -111,13 +111,12 @@ const renderHome = (site) => {
         <h1>${home.heroName.map((line) => `<span>${escapeHtml(line)}</span>`).join('')}</h1>
         <p class="hero-statement">${escapeHtml(site.headline)}</p>
       </div>
-      <aside class="hero-about" aria-labelledby="hero-about-label">
+      <aside class="hero-about" aria-label="Profile and projects">
         <div class="hero-about__portrait is-empty" data-optional-image>
           <span>${escapeHtml(home.profileImage?.placeholder || 'Profile photo')}</span>
           ${home.profileImage?.src ? `<img src="${escapeHtml(home.profileImage.src)}" alt="${escapeHtml(home.profileImage.alt || '')}" loading="eager" hidden />` : ''}
         </div>
         <div class="hero-about__content">
-          <p class="eyebrow" id="hero-about-label">${escapeHtml(home.aboutEyebrow)}</p>
           <h2>${escapeHtml(home.aboutTitle)}</h2>
           ${home.aboutText ? `<p>${escapeHtml(home.aboutText)}</p>` : ''}
           <a class="button-link button-link--primary" href="/projects/">${escapeHtml(home.primaryCta)} ${arrow}</a>

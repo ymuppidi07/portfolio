@@ -181,7 +181,7 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
 }
 .hero-about__portrait {
   position: relative;
-  width: min(100%, 11rem);
+  width: min(100%, 14rem);
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #202326;
@@ -206,7 +206,6 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
 }
 .hero-about__portrait:not(.is-empty) > span { display: none; }
 .hero-about__portrait img { width: 100%; height: 100%; object-fit: cover; }
-.hero-about__content .eyebrow { margin-bottom: .75rem; color: #aeb4b7; }
 .hero-about__content h2 {
   margin: 0;
   font-family: var(--display);
@@ -489,7 +488,7 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   .hero-copy { padding: 4rem 0 2rem; }
   .hero h1 { font-size: clamp(3.5rem, 9vw, 5.25rem); }
   .hero-about { align-self: center; }
-  .hero-about__portrait { width: min(100%, 9rem); }
+  .hero-about__portrait { width: min(100%, 11.5rem); }
   .section-heading { grid-template-columns: 1fr 1fr; }
   .section-heading > p { grid-column: 2; }
   .project-card--flagship { grid-template-columns: 1fr; }
@@ -527,7 +526,7 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   .hero-kicker span:last-child { display: none; }
   .hero-copy { padding: 4rem 0 2.5rem; }
   .hero-statement { max-width: 20rem; font-size: 1.15rem; }
-  .hero-about { grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; align-items: start; }
+  .hero-about { grid-template-columns: 9rem minmax(0, 1fr); gap: 1rem; align-items: start; }
   .hero-about__content h2 { font-size: 1.12rem; line-height: 1.15; }
   .hero-about__content .button-link { margin-top: 1.1rem; }
   .section-heading, .section-heading--compact { grid-template-columns: 1fr; gap: 1.5rem; }
