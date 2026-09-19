@@ -149,7 +149,7 @@ const renderExperience = (site) => {
           <div class="experience-title">
             <div class="experience-logo is-empty" data-optional-image>
               <span>${escapeHtml(item.logo?.placeholder || 'Logo')}</span>
-              ${item.logo?.src ? `<img src="${escapeHtml(item.logo.src)}" alt="${escapeHtml(item.logo.alt || '')}" loading="lazy" hidden />` : ''}
+              ${item.logo?.src ? `<img src="${escapeHtml(item.logo.src)}" alt="${escapeHtml(item.logo.alt || '')}" loading="eager" hidden />` : ''}
             </div>
             <div><h2>${escapeHtml(item.company)}</h2><p>${escapeHtml(item.role)}</p></div>
           </div>
