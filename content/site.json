@@ -51,7 +51,7 @@
       "dates": "2025",
       "location": "New Jersey, USA",
       "logo": {
-        "src": "/images/experience/johnson-johnson-medtech-logo.png",
+        "src": "/images/experience/johnson-johnson-medtech-logo.jpg",
         "alt": "Johnson & Johnson MedTech logo",
         "placeholder": "Logo"
       },
@@ -64,7 +64,7 @@
       "dates": "05/2024 – 08/2024",
       "location": "",
       "logo": {
-        "src": "/images/experience/dupont-logo.png",
+        "src": "/images/experience/dupont-logo.jpg",
         "alt": "DuPont logo",
         "placeholder": "Logo"
       },
@@ -77,7 +77,7 @@
       "dates": "2024 — Present",
       "location": "Indiana, USA",
       "logo": {
-        "src": "/images/experience/purdue-humanoid-robotics-club-logo.png",
+        "src": "/images/experience/purdue-humanoid-robotics-club-logo.jpg",
         "alt": "Purdue Humanoid Robotics Club logo",
         "placeholder": "Logo"
       },
