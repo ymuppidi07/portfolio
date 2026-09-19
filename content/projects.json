@@ -131,27 +131,6 @@
     ]
   },
   {
-    "slug": "fountain-pen",
-    "title": "Fountain Pen",
-    "shortTitle": "Fountain Pen",
-    "group": "additional",
-    "status": "visible",
-    "featured": false,
-    "priority": 7,
-    "year": "2023",
-    "organization": "Team Project",
-    "role": "Product Design",
-    "summary": "A compact drinking-water filtration concept designed around public fountain use.",
-    "lede": "A product concept exploring access to filtered water through a small, portable form factor.",
-    "tools": ["Product Design", "Prototyping", "Team Development"],
-    "media": [],
-    "sections": [
-      {"index": "01", "title": "Need", "layout": "text", "text": "Explain the use context and the design requirements derived from it."},
-      {"index": "02", "title": "Product Development", "layout": "gallery", "text": "Add concept sketches, form studies, prototypes, and filter architecture."},
-      {"index": "03", "title": "Outcome", "layout": "results", "text": "Add verified testing and team outcomes when available."}
-    ]
-  },
-  {
     "slug": "field-deployment-hardware",
     "title": "Field Deployment Hardware",
     "shortTitle": "Deployment Hardware",

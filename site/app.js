@@ -130,11 +130,6 @@ const renderProjects = (site, projects) => {
     .filter((item) => item.status === 'visible' && item.group !== 'zipline')
     .sort((a, b) => a.priority - b.priority);
   main.innerHTML = `
-    <section class="page-hero section-dark page-pad">
-      <p class="eyebrow">${escapeHtml(site.projectsPage.eyebrow)}</p>
-      <h1>${escapeHtml(site.projectsPage.headline)}</h1>
-      <p>${escapeHtml(site.projectsPage.intro)}</p>
-    </section>
     <section class="projects-index section-light page-pad" aria-label="Engineering projects">
       ${visible.map((project, index) => projectCard(project, index === 0 ? 'flagship' : 'standard')).join('')}
     </section>`;
