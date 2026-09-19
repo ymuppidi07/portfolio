@@ -16,7 +16,8 @@ JSON requires double quotation marks and commas between items. When editing, cop
 | Projects page heading | `content/site.json` → `projectsPage` |
 | Project titles and card descriptions | `content/projects.json` → each project's `title` and `summary` |
 | Project-page introductions and sections | `content/projects.json` → `lede`, `role`, `tools`, `media`, and `sections` |
-| Experience page | `content/site.json` → `experiencePage`, `experience`, and `education` |
+| Experience entries | `content/site.json` → `experience` and `education` |
+| Experience logos | `public/images/experience/` |
 | Project images, galleries, and project videos | `public/media/<project-slug>/` |
 | Optional hero image | `public/media/hero/` |
 | Résumé PDF | `public/assets/Yashwanth_Muppidi_Resume.pdf` |
@@ -48,6 +49,15 @@ The easiest method is to replace the file in `public/media/<project-slug>/` with
 If the new filename is different, update its `src` value in `content/projects.json` too.
 
 For the homepage profile photo, add or replace `public/images/profile.jpg`. Keep that filename and the photo updates without any JSON or JavaScript changes. Until the file exists, the homepage shows a neutral text placeholder.
+
+Experience logo slots work the same way. Add the real logo files with these exact paths:
+
+- `public/images/experience/zipline-logo.png`
+- `public/images/experience/johnson-johnson-medtech-logo.png`
+- `public/images/experience/dupont-logo.png`
+- `public/images/experience/purdue-humanoid-robotics-club-logo.png`
+
+Keeping those filenames means no content or JavaScript changes are needed. To use a different filename, update that experience entry's `logo.src` in `content/site.json`.
 
 ## 3. Add a new image
 

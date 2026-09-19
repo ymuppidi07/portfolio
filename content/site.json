@@ -25,11 +25,6 @@
     "headline": "Engineering work, organized by project.",
     "intro": "Browse robotics, aircraft, wearable mechanisms, product design, and competition builds. Each project opens to its own editable page."
   },
-  "experiencePage": {
-    "eyebrow": "Experience",
-    "headline": "Hardware, developed close to the system.",
-    "intro": "Professional and team experience across autonomous aircraft, surgical robotics, medical devices, and humanoid systems."
-  },
   "contact": "https://www.linkedin.com/in/yashwanth-muppidi",
   "linkedin": "https://www.linkedin.com/in/yashwanth-muppidi",
   "resume": "/assets/Yashwanth_Muppidi_Resume.pdf",
@@ -43,8 +38,12 @@
       "role": "Mechanical Engineering Intern",
       "dates": "2026",
       "location": "California, USA",
+      "logo": {
+        "src": "/images/experience/zipline-logo.png",
+        "alt": "Zipline logo",
+        "placeholder": "Logo"
+      },
       "summary": "Developed hardware and software systems supporting UAV operations, electronics testing, data offloading, and field deployment",
-      "highlights": ["Cross-functional hardware development", "Field-deployment and test equipment", "Structural, thermal, and reliability testing"],
       "link": ""
     },
     {
@@ -52,24 +51,38 @@
       "role": "Robotics & Medical Device R&D Intern",
       "dates": "2025",
       "location": "New Jersey, USA",
+      "logo": {
+        "src": "/images/experience/johnson-johnson-medtech-logo.png",
+        "alt": "Johnson & Johnson MedTech logo",
+        "placeholder": "Logo"
+      },
       "summary": "Developed surgical robotics prototypes and manufacturing fixtures while supporting DFM/DFA, GD&T, testing, and root-cause analysis for injection-molded medical device components",
-      "highlights": ["Robotic end-effector prototyping", "Embedded control systems", "Assembly and verification fixtures"]
+      "link": ""
     },
     {
       "company": "DuPont",
       "role": "Mechanical Engineering Intern",
       "dates": "05/2024 – 08/2024",
       "location": "",
+      "logo": {
+        "src": "/images/experience/dupont-logo.png",
+        "alt": "DuPont logo",
+        "placeholder": "Logo"
+      },
       "summary": "Developed mechanical systems and production equipment for high-load and high-temperature applications, improving reliability and manufacturability.",
-      "highlights": ["Mechanical systems and production equipment", "High-load and high-temperature applications", "Reliability and manufacturability"]
+      "link": ""
     },
     {
-      "company": "Humanoid Robotics Club @ Purdue",
+      "company": "Purdue Humanoid Robotics Club",
       "role": "Head of Engineering",
       "dates": "2024 — Present",
       "location": "Indiana, USA",
-      "summary": "Leading mechanical development for NEMO, a bipedal humanoid robotics platform.",
-      "highlights": ["Mechanical architecture", "Team coordination", "Fabrication and system integration"],
+      "logo": {
+        "src": "/images/experience/purdue-humanoid-robotics-club-logo.png",
+        "alt": "Purdue Humanoid Robotics Club logo",
+        "placeholder": "Logo"
+      },
+      "summary": "Leading mechanical, electrical, and software sub-teams developing humanoid, quadruped, teleoperated arm, and robotic hand prototypes for a 300+ member club",
       "link": "/projects/nemo/"
     }
   ],

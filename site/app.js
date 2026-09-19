@@ -120,7 +120,7 @@ const renderHome = (site) => {
 
     <section class="home-about section-light page-pad">
       <div class="home-about__label reveal"><span class="section-number">01</span><p class="eyebrow">${escapeHtml(home.aboutEyebrow)}</p></div>
-      <div class="home-about__portrait is-empty reveal" data-profile-image>
+      <div class="home-about__portrait is-empty reveal" data-optional-image>
         <span>${escapeHtml(home.profileImage?.placeholder || 'Profile photo')}</span>
         ${home.profileImage?.src ? `<img src="${escapeHtml(home.profileImage.src)}" alt="${escapeHtml(home.profileImage.alt || '')}" loading="lazy" hidden />` : ''}
       </div>
@@ -152,22 +152,21 @@ const renderProjects = (site, projects) => {
 };
 
 const renderExperience = (site) => {
-  const page = site.experiencePage;
   main.innerHTML = `
-    <section class="page-hero page-hero--light page-pad">
-      <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
-      <h1>${escapeHtml(page.headline)}</h1>
-      <p>${escapeHtml(page.intro)}</p>
-    </section>
-    <section class="experience-list page-pad section-light">
+    <section class="experience-list experience-list--standalone page-pad section-light" aria-label="Experience">
       ${site.experience.map((item, index) => `
         <article class="experience-item reveal">
           <div class="experience-index">${String(index + 1).padStart(2, '0')}</div>
-          <div class="experience-title"><h2>${escapeHtml(item.company)}</h2><p>${escapeHtml(item.role)}</p></div>
+          <div class="experience-title">
+            <div class="experience-logo is-empty" data-optional-image>
+              <span>${escapeHtml(item.logo?.placeholder || 'Logo')}</span>
+              ${item.logo?.src ? `<img src="${escapeHtml(item.logo.src)}" alt="${escapeHtml(item.logo.alt || '')}" loading="lazy" hidden />` : ''}
+            </div>
+            <div><h2>${escapeHtml(item.company)}</h2><p>${escapeHtml(item.role)}</p></div>
+          </div>
           <div class="experience-details">
             <div class="experience-meta"><span>${escapeHtml(item.dates)}</span>${item.location ? `<span>${escapeHtml(item.location)}</span>` : ''}</div>
             <p>${escapeHtml(item.summary)}</p>
-            <ul>${item.highlights.map((highlight) => `<li>${escapeHtml(highlight)}</li>`).join('')}</ul>
             ${item.link ? `<a class="text-link" href="${escapeHtml(item.link)}">Related project ${arrow}</a>` : ''}
           </div>
         </article>`).join('')}
@@ -268,21 +267,22 @@ const initReveal = () => {
   elements.forEach((element) => observer.observe(element));
 };
 
-const initProfileImage = () => {
-  const frame = document.querySelector('[data-profile-image]');
-  const image = frame?.querySelector('img');
-  if (!frame || !image) return;
-  const showImage = () => {
-    image.hidden = false;
-    frame.classList.remove('is-empty');
-  };
-  const showPlaceholder = () => {
-    image.hidden = true;
-    frame.classList.add('is-empty');
-  };
-  image.addEventListener('load', showImage, { once: true });
-  image.addEventListener('error', showPlaceholder, { once: true });
-  if (image.complete) (image.naturalWidth ? showImage : showPlaceholder)();
+const initOptionalImages = () => {
+  document.querySelectorAll('[data-optional-image]').forEach((frame) => {
+    const image = frame.querySelector('img');
+    if (!image) return;
+    const showImage = () => {
+      image.hidden = false;
+      frame.classList.remove('is-empty');
+    };
+    const showPlaceholder = () => {
+      image.hidden = true;
+      frame.classList.add('is-empty');
+    };
+    image.addEventListener('load', showImage, { once: true });
+    image.addEventListener('error', showPlaceholder, { once: true });
+    if (image.complete) (image.naturalWidth ? showImage : showPlaceholder)();
+  });
 };
 
 try {
@@ -295,7 +295,7 @@ try {
   else if (page === 'experience') renderExperience(site);
   else if (page === 'project') renderProject(projects);
   else renderNotFound();
-  initProfileImage();
+  initOptionalImages();
   initReveal();
 } catch (error) {
   console.error(error);
