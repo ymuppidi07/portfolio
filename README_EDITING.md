@@ -12,7 +12,7 @@ JSON requires double quotation marks and commas between items. When editing, cop
 | Content | Exact location |
 | --- | --- |
 | Homepage hero and short About Me text | `content/site.json` → `eyebrow`, `headline`, `disciplines`, and `home` |
-| Homepage profile photo | `public/images/profile.jpg` |
+| Homepage profile photo | `public/images/profile.png` |
 | Projects page heading | `content/site.json` → `projectsPage` |
 | Project titles and card descriptions | `content/projects.json` → each project's `title` and `summary` |
 | Project-page introductions and sections | `content/projects.json` → `lede`, `role`, `tools`, `media`, and `sections` |
@@ -48,7 +48,7 @@ The easiest method is to replace the file in `public/media/<project-slug>/` with
 
 If the new filename is different, update its `src` value in `content/projects.json` too.
 
-For the homepage profile photo, add or replace `public/images/profile.jpg`. Keep that filename and the photo updates without any JSON or JavaScript changes. Until the file exists, the homepage shows a neutral text placeholder.
+For the homepage profile photo, add or replace `public/images/profile.png`. Keep that filename and the photo updates without any JSON or JavaScript changes. Until the file exists, the homepage shows a neutral text placeholder.
 
 Experience logo slots work the same way. Add the real logo files with these exact paths:
 

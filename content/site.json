@@ -11,7 +11,7 @@
     "heroName": ["Yashwanth", "Muppidi"],
     "heroMedia": null,
     "profileImage": {
-      "src": "/images/profile.jpg",
+      "src": "/images/profile.png",
       "alt": "Portrait of Yashwanth Muppidi",
       "placeholder": "Profile photo"
     },
