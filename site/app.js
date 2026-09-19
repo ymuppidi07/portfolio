@@ -111,28 +111,18 @@ const renderHome = (site) => {
         <h1>${home.heroName.map((line) => `<span>${escapeHtml(line)}</span>`).join('')}</h1>
         <p class="hero-statement">${escapeHtml(site.headline)}</p>
       </div>
-      <div class="hero-spec">
-        <span class="hero-spec__label">Focus</span>
-        <ul>${site.disciplines.map((item, index) => `<li><span>0${index + 1}</span>${escapeHtml(item)}</li>`).join('')}</ul>
-      </div>
-      <div class="hero-scroll" aria-hidden="true"><span></span>${escapeHtml(home.aboutEyebrow)}</div>
-    </section>
-
-    <section class="home-about section-light page-pad">
-      <div class="home-about__label reveal"><span class="section-number">01</span><p class="eyebrow">${escapeHtml(home.aboutEyebrow)}</p></div>
-      <div class="home-about__portrait is-empty reveal" data-optional-image>
-        <span>${escapeHtml(home.profileImage?.placeholder || 'Profile photo')}</span>
-        ${home.profileImage?.src ? `<img src="${escapeHtml(home.profileImage.src)}" alt="${escapeHtml(home.profileImage.alt || '')}" loading="lazy" hidden />` : ''}
-      </div>
-      <div class="home-about__content reveal">
-        <div class="home-about__copy">
+      <aside class="hero-about" aria-labelledby="hero-about-label">
+        <div class="hero-about__portrait is-empty" data-optional-image>
+          <span>${escapeHtml(home.profileImage?.placeholder || 'Profile photo')}</span>
+          ${home.profileImage?.src ? `<img src="${escapeHtml(home.profileImage.src)}" alt="${escapeHtml(home.profileImage.alt || '')}" loading="eager" hidden />` : ''}
+        </div>
+        <div class="hero-about__content">
+          <p class="eyebrow" id="hero-about-label">${escapeHtml(home.aboutEyebrow)}</p>
           <h2>${escapeHtml(home.aboutTitle)}</h2>
           ${home.aboutText ? `<p>${escapeHtml(home.aboutText)}</p>` : ''}
-        </div>
-        <div class="home-about__actions">
           <a class="button-link button-link--primary" href="/projects/">${escapeHtml(home.primaryCta)} ${arrow}</a>
         </div>
-      </div>
+      </aside>
     </section>`;
 };
 

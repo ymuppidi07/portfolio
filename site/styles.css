@@ -114,10 +114,11 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, .34fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) minmax(19rem, 24rem);
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(2rem, 5vw, 6rem);
   min-height: min(62rem, 100svh);
-  padding: 7rem var(--pad) 2.25rem;
+  padding: 7rem var(--pad) 3rem;
   overflow: hidden;
 }
 
@@ -170,17 +171,52 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
 .hero h1 span:last-child { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.7); }
 .hero-statement { max-width: 31rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.75rem); line-height: 1.25; letter-spacing: -.025em; white-space: pre-line; }
 
-.hero-spec {
+.hero-about {
   position: relative;
-  align-self: end;
+  align-self: center;
+  display: grid;
+  gap: 1.4rem;
   border-top: 1px solid var(--line-dark);
+  padding-top: 1.4rem;
 }
-.hero-spec__label { display: block; padding: .85rem 0; color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
-.hero-spec ul { margin: 0; padding: 0; list-style: none; }
-.hero-spec li { display: grid; grid-template-columns: 2rem 1fr; padding: .8rem 0; border-top: 1px solid var(--line-dark); font-size: .88rem; }
-.hero-spec li span { color: #777d80; font-size: .66rem; }
-.hero-scroll { position: relative; grid-column: 1 / -1; display: flex; align-items: center; gap: .75rem; color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
-.hero-scroll span { width: 3rem; height: 1px; background: currentColor; }
+.hero-about__portrait {
+  position: relative;
+  width: min(100%, 11rem);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #202326;
+  border: 1px solid var(--line-dark);
+}
+.hero-about__portrait::after {
+  content: "";
+  position: absolute;
+  inset: .75rem;
+  border: 1px solid rgba(255,255,255,.12);
+  pointer-events: none;
+}
+.hero-about__portrait > span {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  color: #858a8c;
+  font-size: .65rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.hero-about__portrait:not(.is-empty) > span { display: none; }
+.hero-about__portrait img { width: 100%; height: 100%; object-fit: cover; }
+.hero-about__content .eyebrow { margin-bottom: .75rem; color: #aeb4b7; }
+.hero-about__content h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+.hero-about__content > p:not(.eyebrow) { margin: 1rem 0 0; color: #aeb4b7; }
+.hero-about__content .button-link { margin-top: 1.5rem; }
 
 .selected, .additional { padding-top: clamp(5rem, 10vw, 10rem); padding-bottom: clamp(5rem, 10vw, 10rem); }
 .section-heading {
@@ -268,54 +304,6 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   text-transform: uppercase;
 }
 
-.home-about {
-  display: grid;
-  grid-template-columns: minmax(9rem, .32fr) minmax(15rem, .62fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 6rem);
-  align-items: start;
-  min-height: 34rem;
-  padding-top: clamp(5rem, 9vw, 8rem);
-  padding-bottom: clamp(5rem, 9vw, 8rem);
-}
-.home-about__label { display: flex; align-items: center; gap: 1rem; }
-.home-about__portrait {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: #d9dad8;
-  border: 1px solid var(--line);
-}
-.home-about__portrait::after {
-  content: "";
-  position: absolute;
-  inset: 1rem;
-  border: 1px solid rgba(11,13,14,.12);
-  pointer-events: none;
-}
-.home-about__portrait > span {
-  position: absolute;
-  left: 1.25rem;
-  bottom: 1.25rem;
-  z-index: 1;
-  color: #737777;
-  font-size: .7rem;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-}
-.home-about__portrait:not(.is-empty) > span { display: none; }
-.home-about__portrait img { width: 100%; height: 100%; object-fit: cover; }
-.home-about__content { display: flex; min-height: 100%; flex-direction: column; justify-content: space-between; gap: 3rem; }
-.home-about__copy h2 {
-  max-width: 48rem;
-  margin: 0 0 2rem;
-  font-family: var(--display);
-  font-size: clamp(2.6rem, 5vw, 5rem);
-  font-weight: 500;
-  letter-spacing: -.055em;
-  line-height: .94;
-}
-.home-about__copy > p { max-width: 42rem; margin: 0; color: #565a5b; font-size: 1.08rem; }
-.home-about__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; padding-top: .25rem; }
 .button-link--primary { padding: .9rem 1.1rem; background: var(--blue); color: white; }
 
 .projects-index {
@@ -497,17 +485,17 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; min-height: 54rem; }
-  .hero-copy { padding: 7rem 0 3rem; }
-  .hero-spec { width: min(100%, 30rem); }
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem); grid-template-rows: auto 1fr; min-height: min(56rem, 100svh); column-gap: 1.5rem; }
+  .hero-copy { padding: 4rem 0 2rem; }
+  .hero h1 { font-size: clamp(3.5rem, 9vw, 5.25rem); }
+  .hero-about { align-self: center; }
+  .hero-about__portrait { width: min(100%, 9rem); }
   .section-heading { grid-template-columns: 1fr 1fr; }
   .section-heading > p { grid-column: 2; }
   .project-card--flagship { grid-template-columns: 1fr; }
   .project-card--flagship .project-card__visual { min-height: 32rem; }
   .project-card--flagship .project-card__body { min-height: 21rem; }
   .project-grid { grid-template-columns: 1fr; }
-  .home-about { grid-template-columns: minmax(14rem, .7fr) minmax(0, 1fr); }
-  .home-about__label { grid-column: 1 / -1; }
   .projects-index { grid-template-columns: 1fr; }
   .projects-index .project-card--flagship { grid-column: 1; }
   .additional-grid { grid-template-columns: 1fr 1fr; }
@@ -533,13 +521,15 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   #site-nav { display: none; position: fixed; inset: 0; z-index: -1; padding: 8rem var(--pad) 3rem; background: var(--ink); color: var(--white); flex-direction: column; align-items: flex-start; justify-content: flex-start; }
   .menu-open #site-nav { display: flex; }
   #site-nav a { width: 100%; padding: 1rem 0; border-bottom: 1px solid var(--line-dark); font-family: var(--display); font-size: 2.4rem; letter-spacing: -.04em; }
-  .hero { min-height: 49rem; padding-top: 5.5rem; }
+  .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; min-height: 0; padding-top: 5.5rem; padding-bottom: 4rem; }
   .hero-grid { background-size: 3.5rem 3.5rem; }
   .hero h1 { font-size: clamp(3rem, 15vw, 4.75rem); }
   .hero-kicker span:last-child { display: none; }
-  .hero-copy { padding: 5rem 0 2rem; }
+  .hero-copy { padding: 4rem 0 2.5rem; }
   .hero-statement { max-width: 20rem; font-size: 1.15rem; }
-  .hero-scroll { display: none; }
+  .hero-about { grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; align-items: start; }
+  .hero-about__content h2 { font-size: 1.12rem; line-height: 1.15; }
+  .hero-about__content .button-link { margin-top: 1.1rem; }
   .section-heading, .section-heading--compact { grid-template-columns: 1fr; gap: 1.5rem; }
   .section-heading > p { grid-column: 1; }
   .project-card--flagship .project-card__visual { min-height: 24rem; }
@@ -559,9 +549,6 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   .experience-meta { flex-direction: column; }
   .education-card { grid-template-columns: 1fr; gap: .7rem; }
   .footer-main { align-items: flex-start; flex-direction: column; }
-  .home-about { grid-template-columns: 1fr; min-height: 0; }
-  .home-about__label { grid-column: 1; }
-  .home-about__portrait { width: min(100%, 24rem); }
   .collection-meta, .footer-meta { flex-direction: column; }
   .case-hero__top { margin-bottom: 4rem; }
   .case-meta { grid-template-columns: 1fr; }
