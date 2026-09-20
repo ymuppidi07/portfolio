@@ -210,11 +210,60 @@ const renderWorkInProgressProject = (project) => {
     </article>`;
 };
 
+const renderStoryMedia = (media, className = '') => {
+  if (!media?.src) return '';
+  return `<figure class="story-media media-item media-item--image is-empty ${className}" data-optional-image>
+    <span class="media-item__placeholder">Image to be added</span>
+    <img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt || '')}" loading="eager" hidden />
+    ${media.caption ? `<figcaption>${escapeHtml(media.caption)}</figcaption>` : ''}
+  </figure>`;
+};
+
+const renderNarrativeProject = (project, projects) => {
+  const story = project.narrative || {};
+  const meta = [];
+  const visible = projects
+    .filter((item) => item.status === 'visible' && item.group !== 'zipline')
+    .sort((a, b) => a.priority - b.priority);
+  const currentIndex = visible.findIndex((item) => item.slug === project.slug);
+  const next = visible[(currentIndex + 1) % visible.length];
+  if (project.role) meta.push(`<div><span>Focus</span><strong>${escapeHtml(project.role)}</strong></div>`);
+  if (project.tools?.length) meta.push(`<div><span>Tools</span><strong>${project.tools.map(escapeHtml).join(' · ')}</strong></div>`);
+  const block = (name, className, mediaClass) => {
+    const item = story[name];
+    if (!item) return '';
+    return `<section class="story-block ${className} page-pad">
+      <div class="story-copy">
+        ${item.eyebrow ? `<p class="eyebrow">${escapeHtml(item.eyebrow)}</p>` : ''}
+        ${item.title ? `<h2>${escapeHtml(item.title)}</h2>` : ''}
+        ${item.text ? `<p>${escapeHtml(item.text)}</p>` : ''}
+      </div>
+      ${renderStoryMedia(item.media, mediaClass)}
+    </section>`;
+  };
+  main.innerHTML = `
+    <article class="case-study third-thumb-story">
+      <header class="case-hero section-dark page-pad">
+        <div class="case-hero__top"><a href="/projects/">← All projects</a><span>${escapeHtml(project.year)}</span></div>
+        <p class="eyebrow">${escapeHtml(project.organization)}</p>
+        <h1>${escapeHtml(project.title)}</h1>
+        <p class="case-lede">${escapeHtml(project.lede)}</p>
+        ${meta.length ? `<div class="case-meta">${meta.join('')}</div>` : ''}
+        ${story.heroMedia ? `<div class="story-hero-media">${renderStoryMedia(story.heroMedia, 'story-media--hero')}</div>` : ''}
+      </header>
+      ${block('intro', 'story-block--intro', 'story-media--portrait')}
+      ${block('mechanism', 'story-block--mechanism', 'story-media--cad')}
+      ${block('integration', 'story-block--integration', 'story-media--wearable')}
+      <nav class="next-project page-pad" aria-label="Next project"><span>Next project</span><a href="${pathForProject(next)}"><strong>${escapeHtml(next.title)}</strong>${arrow}</a></nav>
+    </article>`;
+};
+
 const renderProject = (projects) => {
   const slug = body.dataset.slug;
   const project = projects.find((item) => item.slug === slug);
   if (!project || project.status !== 'visible') return renderNotFound();
   if (project.projectState === 'work-in-progress') return renderWorkInProgressProject(project);
+  if (project.pageLayout === 'narrative') return renderNarrativeProject(project, projects);
 
   const visible = projects
     .filter((item) => item.status === 'visible' && item.group !== 'zipline')

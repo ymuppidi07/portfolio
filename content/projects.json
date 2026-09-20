@@ -10,7 +10,7 @@
     "year": "2026 — Present",
     "organization": "Purdue Trace Labs / Humanoid Robotics Club",
     "role": "Project Manager · Mechanical Design",
-    "summary": "Over 5-foot-tall bipedal humanoid robot.",
+    "summary": "Currently working on a human sized (> 5 ft) bipedal humanoid robot.",
     "lede": "Over 5-foot-tall bipedal humanoid robot.",
     "tools": [],
     "projectState": "work-in-progress",
@@ -59,7 +59,7 @@
     "year": "2026",
     "organization": "Zipline",
     "role": "Mechanical Engineering Intern",
-    "summary": "Selected work from my mechanical engineering internship at Zipline.",
+    "summary": "Some of the projects I worked on while I was interning at Zipline from UAV data-offloaders to dynamic on-field fixtures for drones",
     "lede": "A collection of projects completed during my mechanical engineering internship at Zipline.",
     "tools": [],
     "placeholder": "Project media / To be added",
@@ -82,19 +82,34 @@
     "year": "2025",
     "organization": "Animatronics",
     "role": "Mechanical Design · Mechatronics",
-    "summary": "Designed a 3-DOF prosthetic 'third thumb' with pin-jointed phalanges and a wearable hand interface. The prototype integrated a a servo-driven wire-tensioning system mounted onto the hand and wrist for responsive thumb actuation.",
-    "lede": "A compact wearable mechanism at the intersection of human factors, mechanical design, and control.",
-    "tools": ["CAD", "Rapid Prototyping", "Embedded Systems", "Testing"],
+    "summary": "I designed and prototyped a 3-DOF wearable robotic thumb with pin-jointed phalanges and servo-driven wire-tension actuation.",
+    "lede": "A 3-DOF wearable robotic thumb exploring mechanical design, actuation, and human-device interaction.",
+    "tools": ["Mechanical Design", "Mechatronics", "3D Printing", "Arduino"],
+    "pageLayout": "narrative",
     "cover": {"src": "/media/third-thumb/third-thumb-cover.avif", "alt": "Third Thumb project cover"},
-    "media": [
-      {"type": "image", "src": "/media/third-thumb/third-thumb-overview.avif", "alt": "Third Thumb project overview"}
-    ],
-    "sections": [
-      {"index": "01", "title": "Design Problem", "layout": "text", "text": "Frame the user need, desired motion, comfort considerations, and technical constraints here."},
-      {"index": "02", "title": "Mechanism", "layout": "media", "text": "Add mechanism studies, attachment geometry, routing, and component packaging.", "media": [{"type": "image", "src": "/media/third-thumb/third-thumb-mechanism.jpg", "alt": "Third Thumb mechanism"}]},
-      {"index": "03", "title": "Prototyping", "layout": "steps", "text": "Use a short visual sequence to show how fit, motion, and controllability changed through testing.", "items": ["Form study", "Motion prototype", "Wearable integration", "User testing"]},
-      {"index": "04", "title": "Outcome", "layout": "results", "text": "Reserve this area for validated performance and learning."}
-    ]
+    "narrative": {
+      "heroMedia": {"src": "/media/third-thumb/third-thumb-bench-setup.png", "alt": "Third Thumb bench setup and actuation test"},
+      "intro": {
+        "eyebrow": "Wearable prototype",
+        "title": "A third thumb built around the hand.",
+        "text": "I designed and prototyped this 3-DOF Third Thumb after studying research from the University of Cambridge. Pin-jointed phalanges are actuated by a servo-driven wire-tensioning mechanism mounted across the hand and wrist. I iterated through multiple 3D-printed designs to improve flexion, extension, and grip stability.",
+        "media": {"src": "/media/third-thumb/third-thumb-assembled-prototype.png", "alt": "Assembled Third Thumb prototype on a hand"}
+      },
+      "mechanism": {
+        "eyebrow": "Mechanism and fit",
+        "title": "Designed for motion, tolerance, and wearability.",
+        "text": "I studied hand anatomy—particularly how the muscles and bones work through the fingers—to inform the device geometry. Repeated iterations refined part tolerances and sizing so the rigid PLA assembly could move cleanly while fitting against my hand. A layer of Fosshape, a heat-activated soft thermoplastic, provided a flexible buffer between the device and my skin.",
+        "media": {"src": "/media/third-thumb/third-thumb-cad.png", "alt": "CAD model of the articulated Third Thumb mechanism"}
+      },
+      "integration": {
+        "eyebrow": "Actuation and integration",
+        "title": "A wrist-mounted drive system.",
+        "text": "The actuator sits in a custom motor casing worn like a watch band. An Arduino Uno controls the servo-driven motion, bringing the tendon-style wire routing, wearable structure, and mechanical thumb together into one responsive prototype.",
+        "media": {"src": "/media/third-thumb/third-thumb-worn-prototype.png", "alt": "Third Thumb prototype being worn and actuated"}
+      }
+    },
+    "media": [],
+    "sections": []
   },
   {
     "slug": "vtol",
@@ -130,7 +145,7 @@
     "featured": false,
     "priority": 6,
     "year": "2022 — 2023",
-    "organization": "Independent Project",
+    "organization": "High School Capstone Project",
     "role": "Mechanical Design · Robotics",
     "summary": "Developed H.A.R.R.Y., a mobile aluminum humanoid robot designed to aid individuals with mobility challenges. This prototype successfully demonstrated its ability to elevate its chassis, perform complex arm movements, and grip and lift objects, culminating in a presentation of its capabilities to industry professionals.",
     "lede": "An early robotics project centered on translating human movement into a physical prototype.",

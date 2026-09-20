@@ -68,7 +68,7 @@ Card and overview image slots are already configured. Add a real image using one
 | Ariel | `public/media/ariel/ariel-cover.avif` | Work-in-progress page intentionally has no overview image yet |
 | NEMO | `public/media/nemo/nemo-cover.avif` | `public/media/nemo/nemo-overview.avif` |
 | Zipline Projects | `public/media/zipline-projects/zipline-projects-cover.avif` | `public/media/zipline-projects/zipline-projects-overview.avif` |
-| Third Thumb | `public/media/third-thumb/third-thumb-cover.avif` | `public/media/third-thumb/third-thumb-overview.avif` |
+| Third Thumb | `public/media/third-thumb/third-thumb-cover.avif` | Narrative page uses the supplied `third-thumb-*.png` files in the same folder |
 | VTOL Aircraft | `public/media/vtol/vtol-cover.avif` | `public/media/vtol/vtol-overview.avif` |
 | H.A.R.R.Y. | `public/media/harry/harry-cover.avif` | `public/media/harry/harry-overview.avif` |
 | VEX Robot | `public/media/vex/vex-cover.avif` | `public/media/vex/vex-overview.avif` |
@@ -85,6 +85,15 @@ Several project-section image slots are also ready:
 - `public/media/harry/harry-build.jpg`
 
 You do not need to edit JSON when using those exact filenames. The file contents must match their extension: these `.avif` cover and overview files must contain real AVIF image data.
+
+Third Thumb has a concise narrative layout. Its page text is in `content/projects.json` under `"slug": "third-thumb"` → `lede`, `summary`, and `narrative`. Its current page images are:
+
+- `public/media/third-thumb/third-thumb-bench-setup.png`
+- `public/media/third-thumb/third-thumb-assembled-prototype.png`
+- `public/media/third-thumb/third-thumb-cad.png`
+- `public/media/third-thumb/third-thumb-worn-prototype.png`
+
+To replace, reorder, or add to this story later, edit the matching `heroMedia`, `intro.media`, `mechanism.media`, or `integration.media` entry inside that same `narrative` object. No React changes are required.
 
 For any additional image beyond the configured slots, copy it into the matching project folder and add it to the project in `content/projects.json`.
 
