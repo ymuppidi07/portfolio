@@ -105,6 +105,15 @@ VTOL Aircraft also uses a concise narrative layout. Its page text is in `content
 
 To replace or reorder these images later, update the matching `heroMedia`, `intro.media`, `mechanism.media`, `integration.media`, or `integration.secondaryMedia` entry inside the VTOL `narrative` object. No React changes are required.
 
+H.A.R.R.Y. uses the same narrative layout. Its page text is in `content/projects.json` under `"slug": "harry"` → `lede`, `summary`, and `narrative`. Its current page images are:
+
+- `public/media/harry/harry-full-robot.png`
+- `public/media/harry/harry-chassis-lift.png`
+- `public/media/harry/harry-shoulder-arm.png`
+- `public/media/harry/harry-arm-prototype.png`
+
+To replace or reorder these images later, update the matching `heroMedia`, `intro.media`, `mechanism.media`, or `integration.media` entry inside the H.A.R.R.Y. `narrative` object. No React changes are required.
+
 For any additional image beyond the configured slots, copy it into the matching project folder and add it to the project in `content/projects.json`.
 
 To use it as the image on the Projects page card, add:

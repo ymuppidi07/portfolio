@@ -166,18 +166,38 @@
     "year": "2022 — 2023",
     "organization": "High School Capstone Project",
     "role": "Mechanical Design · Robotics",
-    "summary": "Developed H.A.R.R.Y., a mobile aluminum humanoid robot designed to aid individuals with mobility challenges. This prototype successfully demonstrated its ability to elevate its chassis, perform complex arm movements, and grip and lift objects, culminating in a presentation of its capabilities to industry professionals.",
-    "lede": "An early robotics project centered on translating human movement into a physical prototype.",
-    "tools": ["CAD", "Fabrication", "Electronics", "Programming"],
+    "summary": "Our team developed H.A.R.R.Y., a mobile aluminum humanoid robot that demonstrated locomotion, chassis elevation, arm motion, gripping, and object transport.",
+    "lede": "A mobile humanoid robot combining locomotion, vertical adjustment, and motor-pneumatic manipulation.",
+    "tools": ["Mechanical Design", "Robotics", "Pneumatics", "Prototyping"],
     "cover": {"src": "/media/harry/harry-cover.avif", "alt": "H.A.R.R.Y. project cover"},
-    "media": [
-      {"type": "image", "src": "/media/harry/harry-overview.avif", "alt": "H.A.R.R.Y. project overview"}
-    ],
-    "sections": [
-      {"index": "01", "title": "Concept", "layout": "text", "text": "Describe the intended tasks and the original mechanical concept."},
-      {"index": "02", "title": "Build", "layout": "gallery", "text": "Add prototype, assembly, and testing images.", "media": [{"type": "image", "src": "/media/harry/harry-build.jpg", "alt": "H.A.R.R.Y. build"}]},
-      {"index": "03", "title": "Learning", "layout": "results", "text": "Summarize what this early system taught you and how it informed later robotics work."}
-    ]
+    "pageLayout": "narrative",
+    "narrative": {
+      "heroMediaClass": "story-media--hero story-media--harry-hero",
+      "heroMedia": {"src": "/media/harry/harry-full-robot.png", "alt": "Full assembled H.A.R.R.Y. mobile humanoid robot"},
+      "intro": {
+        "eyebrow": "Mobile platform",
+        "title": "A mobile humanoid built around an aluminum chassis.",
+        "text": "Our team developed H.A.R.R.Y., a mobile aluminum humanoid robot designed to aid individuals with mobility challenges. Its 6-motor drivetrain chassis provided the stable platform needed to navigate different environments, while a rear motorized door securely held and transported objects. A four-motor linear-slide mechanism elevated the central chassis so the robot could interact with objects at different heights.",
+        "mediaClass": "story-media--harry-chassis",
+        "media": {"src": "/media/harry/harry-chassis-lift.png", "alt": "H.A.R.R.Y. aluminum chassis and vertical lift structure"}
+      },
+      "mechanism": {
+        "eyebrow": "Arm architecture",
+        "title": "Motorized shoulders with pneumatic elbow motion.",
+        "text": "We designed the arms around a motorized shoulder mechanism and pneumatic circuits. The shoulder provided a broad range of motion, while the pneumatically actuated elbow handled contraction and extension. Adding a flow regulator reduced aggressive elbow contractions and made the movement smoother and more controlled.",
+        "mediaClass": "story-media--harry-arm",
+        "media": {"src": "/media/harry/harry-shoulder-arm.png", "alt": "H.A.R.R.Y. shoulder and arm assembly"}
+      },
+      "integration": {
+        "eyebrow": "Prototype capability",
+        "title": "Designed to grip, lift, and demonstrate the full system.",
+        "text": "Together, the drivetrain, lift, and arm systems allowed the prototype to elevate its chassis, perform complex arm movements, and grip and lift objects weighing up to 50 N. Our team presented the working robot and its findings to industry professionals.",
+        "mediaClass": "story-media--harry-prototype",
+        "media": {"src": "/media/harry/harry-arm-prototype.png", "alt": "H.A.R.R.Y. arm prototype and pneumatic mechanism"}
+      }
+    },
+    "media": [],
+    "sections": []
   },
   {
     "slug": "vex",

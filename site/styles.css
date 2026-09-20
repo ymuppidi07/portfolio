@@ -529,6 +529,11 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
 .project-story--vtol .story-block--intro { grid-template-columns: minmax(0, 1.05fr) minmax(19rem, .95fr); }
 .project-story--vtol .story-block--mechanism { grid-template-columns: minmax(0, 1.12fr) minmax(18rem, .6fr); }
 .project-story--vtol .story-block--integration { grid-template-columns: minmax(0, 1fr) minmax(25rem, 1fr); }
+.story-media--harry-hero { aspect-ratio: 16 / 9; background: #fff; }
+.story-media--harry-hero img { object-fit: contain; }
+.story-media--harry-chassis { aspect-ratio: 3 / 4; background: #e7e6e1; }
+.story-media--harry-arm { aspect-ratio: 3 / 4; background: #e7e6e1; }
+.story-media--harry-prototype { aspect-ratio: 1 / 1; background: #e7e6e1; }
 
 .case-section { display: grid; grid-template-columns: .2fr .55fr 1fr; gap: clamp(1.5rem, 4vw, 5rem); padding-top: 7rem; padding-bottom: 7rem; border-bottom: 1px solid var(--line); }
 .case-section:nth-of-type(odd) { background: #e7e6e1; }
