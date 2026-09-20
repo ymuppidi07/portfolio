@@ -201,27 +201,32 @@
   },
   {
     "slug": "vex",
-    "title": "VEX Competition Robot",
-    "shortTitle": "Captain",
+    "title": "Competition Robot",
+    "shortTitle": "Competition Robot",
     "group": "additional",
     "status": "visible",
     "featured": false,
     "priority": 7,
     "year": "2021 — 2023",
     "organization": "VEX Robotics Competition",
-    "role": "Mechanical Design · Build",
-    "summary": "As the team captain, I led the development of a competitive robot for the VEX Spin Up competition. The robot was engineered for high-speed disk intake and shooting, along with a custom expansion mechanism, leading to a championship win at the NJ TSA Championships and qualification for both VEX Nationals and World Championships.",
-    "lede": "Designing mechanisms under strict game, time, packaging, and reliability constraints.",
-    "tools": ["Mechanism Design", "Pneumatics", "Fabrication", "Competition Testing"],
-    "cover": {"src": "/media/vex/vex-cover.avif", "alt": "VEX Competition Robot project cover"},
-    "media": [
-      {"type": "image", "src": "/media/vex/vex-overview.avif", "alt": "VEX Competition Robot project overview"}
-    ],
-    "sections": [
-      {"index": "01", "title": "Game Constraints", "layout": "text", "text": "Introduce the scoring objectives and constraints that drove the robot architecture."},
-      {"index": "02", "title": "Mechanisms", "layout": "diagram", "text": "Organize intake, launch, lift, and endgame systems into a clear mechanical story.", "items": ["Intake", "Indexer", "Flywheel", "Expansion system"]},
-      {"index": "03", "title": "Competition", "layout": "results", "text": "Add confirmed event results, rankings, and the iteration between competitions."}
-    ]
+    "role": "Team Captain · Mechanical Design",
+    "summary": "As team captain, I co-developed a VEX Spin Up robot integrating disk intake, flywheel shooting, pneumatic indexers, and expansion systems.",
+    "lede": "VEX Spin Up competition robot integrating disk intake, flywheel shooting, pneumatics, and expansion systems.",
+    "tools": ["Robotics", "Mechanical Design", "Pneumatics", "Competition Engineering"],
+    "cover": {"src": "/media/vex/vex-competition-robot.png", "alt": "VEX Spin Up competition robot"},
+    "pageLayout": "narrative",
+    "narrative": {
+      "heroMediaClass": "story-media--hero story-media--vex-hero",
+      "heroMedia": {"src": "/media/vex/vex-competition-robot.png", "alt": "Full VEX Spin Up competition robot"},
+      "intro": {
+        "eyebrow": "VEX Spin Up",
+        "title": "A coordinated system for intake, shooting, and expansion.",
+        "text": "As team captain, I co-developed our VEX Spin Up competition robot around a vertical intake for rapid disk collection, two pneumatic piston indexers, and a 3600 RPM flywheel for shooting disks into raised baskets. We also built a pneumatic expansion mechanism that released a tensioned string across the field, plus a pneumatic- and rubber-band-tensioned mesh blocker for defense. The team won the NJ TSA Championships and qualified for VEX Nationals and the VEX World Championships.",
+        "layout": "text-only"
+      }
+    },
+    "media": [],
+    "sections": []
   },
   {
     "slug": "field-deployment-hardware",

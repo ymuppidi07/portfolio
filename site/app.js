@@ -233,16 +233,17 @@ const renderNarrativeProject = (project, projects) => {
     const item = story[name];
     if (!item) return '';
     const mediaClass = item.mediaClass || fallbackMediaClass;
+    const textOnly = item.layout === 'text-only';
     const visuals = item.secondaryMedia
       ? `<div class="story-media-pair">${renderStoryMedia(item.media, mediaClass)}${renderStoryMedia(item.secondaryMedia, mediaClass)}</div>`
       : renderStoryMedia(item.media, mediaClass);
-    return `<section class="story-block ${className} page-pad">
+    return `<section class="story-block ${className}${textOnly ? ' story-block--text-only' : ''} page-pad">
       <div class="story-copy">
         ${item.eyebrow ? `<p class="eyebrow">${escapeHtml(item.eyebrow)}</p>` : ''}
         ${item.title ? `<h2>${escapeHtml(item.title)}</h2>` : ''}
         ${item.text ? `<p>${escapeHtml(item.text)}</p>` : ''}
       </div>
-      ${visuals}
+      ${textOnly ? '' : visuals}
     </section>`;
   };
   main.innerHTML = `
