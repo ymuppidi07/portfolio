@@ -229,27 +229,31 @@ const renderNarrativeProject = (project, projects) => {
   const next = visible[(currentIndex + 1) % visible.length];
   if (project.role) meta.push(`<div><span>Focus</span><strong>${escapeHtml(project.role)}</strong></div>`);
   if (project.tools?.length) meta.push(`<div><span>Tools</span><strong>${project.tools.map(escapeHtml).join(' · ')}</strong></div>`);
-  const block = (name, className, mediaClass) => {
+  const block = (name, className, fallbackMediaClass) => {
     const item = story[name];
     if (!item) return '';
+    const mediaClass = item.mediaClass || fallbackMediaClass;
+    const visuals = item.secondaryMedia
+      ? `<div class="story-media-pair">${renderStoryMedia(item.media, mediaClass)}${renderStoryMedia(item.secondaryMedia, mediaClass)}</div>`
+      : renderStoryMedia(item.media, mediaClass);
     return `<section class="story-block ${className} page-pad">
       <div class="story-copy">
         ${item.eyebrow ? `<p class="eyebrow">${escapeHtml(item.eyebrow)}</p>` : ''}
         ${item.title ? `<h2>${escapeHtml(item.title)}</h2>` : ''}
         ${item.text ? `<p>${escapeHtml(item.text)}</p>` : ''}
       </div>
-      ${renderStoryMedia(item.media, mediaClass)}
+      ${visuals}
     </section>`;
   };
   main.innerHTML = `
-    <article class="case-study third-thumb-story">
+    <article class="case-study narrative-project project-story--${escapeHtml(project.slug)}">
       <header class="case-hero section-dark page-pad">
         <div class="case-hero__top"><a href="/projects/">← All projects</a><span>${escapeHtml(project.year)}</span></div>
         <p class="eyebrow">${escapeHtml(project.organization)}</p>
         <h1>${escapeHtml(project.title)}</h1>
         <p class="case-lede">${escapeHtml(project.lede)}</p>
         ${meta.length ? `<div class="case-meta">${meta.join('')}</div>` : ''}
-        ${story.heroMedia ? `<div class="story-hero-media">${renderStoryMedia(story.heroMedia, 'story-media--hero')}</div>` : ''}
+        ${story.heroMedia ? `<div class="story-hero-media">${renderStoryMedia(story.heroMedia, story.heroMediaClass || 'story-media--hero')}</div>` : ''}
       </header>
       ${block('intro', 'story-block--intro', 'story-media--portrait')}
       ${block('mechanism', 'story-block--mechanism', 'story-media--cad')}

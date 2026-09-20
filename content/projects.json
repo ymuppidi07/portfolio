@@ -122,19 +122,38 @@
     "year": "2023 - 2024",
     "organization": "Purdue Aerial Robotics Team",
     "role": "Mechanical Engineering",
-    "summary": "Supported the development of a VTOL (Vertical Take-Off and Landing) drone capable of seamlessly transitioning from vertical to horizontal flight. I helped enhance the structural integrity and optimizing the aerodynamic performance of the aircraft.",
-    "lede": "Developing an aircraft architecture that transitions between vertical lift and forward flight around a defined mission.",
-    "tools": ["CAD", "Airframe Design", "Prototyping", "Flight Testing"],
+    "summary": "I contributed to the construction and testing of a VTOL aircraft designed to transition between vertical and horizontal flight.",
+    "lede": "Structural design, aerodynamic testing, and hardware validation for a transitioning VTOL aircraft.",
+    "tools": ["Mechanical Design", "Aerodynamics", "Test Engineering", "SolidWorks"],
     "cover": {"src": "/media/vtol/vtol-cover.avif", "alt": "VTOL Aircraft project cover"},
-    "media": [
-      {"type": "image", "src": "/media/vtol/vtol-overview.avif", "alt": "VTOL Aircraft project overview"}
-    ],
-    "sections": [
-      {"index": "01", "title": "Mission", "layout": "text", "text": "Introduce the payload-drop mission, flight phases, and the requirements that shaped the vehicle."},
-      {"index": "02", "title": "Aircraft Architecture", "layout": "diagram", "text": "Show the relationship between lift, tilt mechanism, airframe, payload, avionics, and control surfaces.", "items": ["Tilt mechanism", "Airframe", "Propulsion", "Payload system"]},
-      {"index": "03", "title": "Mechanical Development", "layout": "gallery", "text": "Add CAD, fabrication, and assembly media with concise engineering captions.", "media": [{"type": "image", "src": "/media/vtol/vtol-mechanical-development.jpg", "alt": "VTOL mechanical development"}]},
-      {"index": "04", "title": "Test & Iteration", "layout": "results", "text": "Document verified test results and the design changes they produced."}
-    ]
+    "pageLayout": "narrative",
+    "narrative": {
+      "heroMedia": {"src": "/media/vtol/vtol-airframe.png", "alt": "Assembled VTOL aircraft airframe"},
+      "intro": {
+        "eyebrow": "Aircraft development",
+        "title": "Built for the transition between lift and forward flight.",
+        "text": "I collaborated on the construction of a VTOL aircraft capable of transitioning from vertical to horizontal flight. My work covered structural design, aerodynamic testing, and hardware validation. I also helped assemble the V1 wings and empennage from carbon fiber, wood, and aluminum, reinforcing critical stress locations in the fuselage and empennage for transition loads.",
+        "mediaClass": "story-media--landscape",
+        "media": {"src": "/media/vtol/vtol-v2-cad.png", "alt": "CAD rendering of the VTOL V2 aircraft design"}
+      },
+      "mechanism": {
+        "eyebrow": "Wind-tunnel testing",
+        "title": "A V2 mount for fuselage comparisons.",
+        "text": "I designed the V2 fuselage prototype mount in SolidWorks for wind-tunnel testing of four fuselage prototypes. Using a dynamometer, we measured lift, drag, and pitching moment at multiple angles of attack. We determined airspeed from dynamic pressure, calculated dimensionless lift and drag coefficients, and compared lift-to-drag ratios across the models.",
+        "mediaClass": "story-media--mount",
+        "media": {"src": "/media/vtol/vtol-wind-tunnel-mount.png", "alt": "VTOL fuselage prototype mounted for wind-tunnel testing"}
+      },
+      "integration": {
+        "eyebrow": "Hardware validation",
+        "title": "A representative spar and thrust test rig.",
+        "text": "To measure motor thrust and carbon-fiber spar deflection under load, we designed and built a custom test rig. A 3D-printable wing cross-section let the spar mount in the same configuration used on the aircraft. A load cell was calibrated with known weights from 1 to 30 lb, producing a linear relationship used in the test software to convert load-cell output into thrust measurements.",
+        "mediaClass": "story-media--rig",
+        "media": {"src": "/media/vtol/vtol-test-rig-cad.png", "alt": "CAD model of the VTOL thrust and spar test rig"},
+        "secondaryMedia": {"src": "/media/vtol/vtol-test-rig.png", "alt": "Physical VTOL thrust and spar test rig"}
+      }
+    },
+    "media": [],
+    "sections": []
   },
   {
     "slug": "harry",

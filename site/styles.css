@@ -516,6 +516,18 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
 .story-media--cad img { object-fit: contain; }
 .story-block--integration { grid-template-columns: minmax(0, 1.05fr) minmax(15rem, .8fr); background: var(--paper); }
 .story-media--wearable { aspect-ratio: 4 / 5; }
+.story-media-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+
+.story-media--landscape { aspect-ratio: 16 / 9; background: #fff; }
+.story-media--landscape img { object-fit: contain; }
+.story-media--mount { aspect-ratio: 3 / 4; background: #e7e6e1; }
+.story-media--rig { aspect-ratio: 1 / 1; background: #fff; }
+.story-media--rig img { object-fit: contain; }
+.project-story--vtol .story-media--hero { aspect-ratio: 16 / 7; background: #fff; }
+.project-story--vtol .story-media--hero img { object-fit: contain; }
+.project-story--vtol .story-block--intro { grid-template-columns: minmax(0, 1.05fr) minmax(19rem, .95fr); }
+.project-story--vtol .story-block--mechanism { grid-template-columns: minmax(0, 1.12fr) minmax(18rem, .6fr); }
+.project-story--vtol .story-block--integration { grid-template-columns: minmax(0, 1fr) minmax(25rem, 1fr); }
 
 .case-section { display: grid; grid-template-columns: .2fr .55fr 1fr; gap: clamp(1.5rem, 4vw, 5rem); padding-top: 7rem; padding-bottom: 7rem; border-bottom: 1px solid var(--line); }
 .case-section:nth-of-type(odd) { background: #e7e6e1; }
@@ -661,6 +673,7 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   .story-media--portrait,
   .story-media--wearable { aspect-ratio: 4 / 5; }
   .story-media--cad { aspect-ratio: 1 / 1; }
+  .story-media-pair { grid-template-columns: 1fr; }
   .system-diagram { grid-template-columns: 1fr; }
   .media-grid { grid-template-columns: 1fr; }
   .next-project strong { font-size: 2.6rem; }
