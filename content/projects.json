@@ -26,23 +26,24 @@
     ]
   },
   {
-    "slug": "ariel",
-    "title": "Ariel",
-    "shortTitle": "Ariel",
+    "slug": "zipline-projects",
+    "title": "Zipline Projects",
+    "shortTitle": "Zipline",
     "group": "projects",
     "status": "visible",
     "featured": false,
     "priority": 2,
-    "year": "",
-    "organization": "",
-    "role": "",
-    "summary": "Work in Progress",
-    "lede": "Work in Progress",
+    "year": "2026",
+    "organization": "Zipline",
+    "role": "Mechanical Engineering Intern",
+    "summary": "Selected work from my mechanical engineering internship at Zipline.",
+    "lede": "A collection of projects completed during my mechanical engineering internship at Zipline.",
     "tools": [],
-    "projectState": "work-in-progress",
-    "placeholder": "Work in Progress",
+    "placeholder": "Project media / To be added",
     "media": [],
-    "sections": []
+    "sections": [
+      {"index": "01", "title": "Projects", "layout": "gallery", "text": "Project details and approved media will be added here.", "media": []}
+    ]
   },
   {
     "slug": "third-thumb",

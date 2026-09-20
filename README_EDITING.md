@@ -25,12 +25,11 @@ JSON requires double quotation marks and commas between items. When editing, cop
 The existing project media folders are:
 
 - `public/media/nemo/`
-- `public/media/ariel/`
+- `public/media/zipline-projects/`
 - `public/media/third-thumb/`
 - `public/media/vtol/`
 - `public/media/harry/`
 - `public/media/vex/`
-- `public/media/fountain-pen/`
 
 ## 1. Change text
 
@@ -148,18 +147,18 @@ Save the file and the live preview will update automatically. To permanently del
 
 Change each project's `priority` number in `content/projects.json`. Lower numbers appear first. Save the file to update the live preview.
 
-## 9. Update Ariel later
+## 9. Update Zipline Projects
 
-Find `"slug": "ariel"` in `content/projects.json`.
+Find `"slug": "zipline-projects"` in `content/projects.json`.
 
-1. Change `summary` and `lede` from `Work in Progress` to your real text.
-2. Change `projectState` from `work-in-progress` to `complete`.
-3. Add your real `year`, `organization`, `role`, and `tools` values.
-4. Add project-page objects inside `sections`.
-5. Put real Ariel media in `public/media/ariel/` and add `cover`, `media`, or section-level `media` entries.
+1. Edit `summary` and `lede` with the approved overview text.
+2. Add or update project-page objects inside `sections` for each project blurb.
+3. Put approved media in `public/media/zipline-projects/`.
+4. Add a `cover`, top-level `media`, or section-level `media` entries using those files.
+5. Keep confidential or unapproved project details out of the public content file.
 6. Save the file to update the live preview.
 
-As long as you follow the existing JSON pattern, Ariel can be fully updated without editing React or JavaScript.
+As long as you follow the existing JSON pattern, the Zipline page can be fully updated without editing React or JavaScript.
 
 ## 10. Replace the résumé
 
