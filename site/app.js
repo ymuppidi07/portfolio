@@ -130,9 +130,11 @@ const renderProjects = (site, projects) => {
     .filter((item) => item.status === 'visible' && item.group !== 'zipline')
     .sort((a, b) => a.priority - b.priority);
   main.innerHTML = `
-    <section class="projects-index section-light page-pad" aria-label="Engineering projects">
-      ${visible.map((project, index) => projectCard(project, index === 0 ? 'flagship' : 'standard')).join('')}
-    </section>`;
+    <div class="projects-page section-light">
+      <section class="projects-index page-pad" aria-label="Engineering projects">
+        ${visible.map((project, index) => projectCard(project, index === 0 ? 'flagship' : 'standard')).join('')}
+      </section>
+    </div>`;
 };
 
 const renderExperience = (site) => {
