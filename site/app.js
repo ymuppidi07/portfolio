@@ -89,7 +89,7 @@ const projectVisual = (project) => {
 
 const projectCard = (project, size = 'standard') => {
   const meta = [project.organization, project.year].filter(Boolean);
-  return `<a class="project-card project-card--${size}" href="${pathForProject(project)}">
+  return `<a class="project-card project-card--${size} project-card--${escapeHtml(project.slug)}" href="${pathForProject(project)}">
     ${projectVisual(project)}
     <div class="project-card__body">
       ${meta.length ? `<div class="project-card__meta">${meta.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : ''}
