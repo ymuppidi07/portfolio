@@ -64,12 +64,12 @@ Card and overview image slots are already configured. Add a real JPG using one o
 
 | Project | Card image | Project-page overview image |
 | --- | --- | --- |
-| NEMO | `public/media/nemo/nemo-cover.jpg` | `public/media/nemo/nemo-overview.jpg` |
-| Zipline Projects | `public/media/zipline-projects/zipline-projects-cover.jpg` | `public/media/zipline-projects/zipline-projects-overview.jpg` |
-| Third Thumb | `public/media/third-thumb/third-thumb-cover.jpg` | `public/media/third-thumb/third-thumb-overview.jpg` |
-| VTOL Aircraft | `public/media/vtol/vtol-cover.jpg` | `public/media/vtol/vtol-overview.jpg` |
-| H.A.R.R.Y. | `public/media/harry/harry-cover.jpg` | `public/media/harry/harry-overview.jpg` |
-| VEX Robot | `public/media/vex/vex-cover.jpg` | `public/media/vex/vex-overview.jpg` |
+| NEMO | `public/media/nemo/nemo-cover.avif` | `public/media/nemo/nemo-overview.avif` |
+| Zipline Projects | `public/media/zipline-projects/zipline-projects-cover.avif` | `public/media/zipline-projects/zipline-projects-overview.avif` |
+| Third Thumb | `public/media/third-thumb/third-thumb-cover.avif` | `public/media/third-thumb/third-thumb-overview.avif` |
+| VTOL Aircraft | `public/media/vtol/vtol-cover.avif` | `public/media/vtol/vtol-overview.avif` |
+| H.A.R.R.Y. | `public/media/harry/harry-cover.avif` | `public/media/harry/harry-overview.avif` |
+| VEX Robot | `public/media/vex/vex-cover.avif` | `public/media/vex/vex-overview.avif` |
 
 Several project-section image slots are also ready:
 
@@ -82,7 +82,7 @@ Several project-section image slots are also ready:
 - `public/media/vtol/vtol-mechanical-development.jpg`
 - `public/media/harry/harry-build.jpg`
 
-You do not need to edit JSON when using those exact filenames. The file contents must really be JPEG data because the names end in `.jpg`.
+You do not need to edit JSON when using those exact filenames. The file contents must match their extension: these `.avif` cover and overview files must contain real AVIF image data.
 
 For any additional image beyond the configured slots, copy it into the matching project folder and add it to the project in `content/projects.json`.
 

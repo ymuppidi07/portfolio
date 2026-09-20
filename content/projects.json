@@ -13,9 +13,9 @@
     "summary": "NEMO is a small-scale humanoid robot designed to mimic human-like proportions, created for research into bipedal locomotion. Standing at approximately 3 feet tall, NEMO was engineered for rapid iteration and practicality, utilizing deep reinforcement learning to develop a functional walking gait.",
     "lede": "Designing the physical platform for a student-built bipedal humanoid—and the iteration loop required to make it walk.",
     "tools": ["CAD", "FEA", "MuJoCo", "ROS 2", "Fabrication", "Testing"],
-    "cover": {"src": "/media/nemo/nemo-cover.jpg", "alt": "NEMO project cover"},
+    "cover": {"src": "/media/nemo/nemo-cover.avif", "alt": "NEMO project cover"},
     "media": [
-      {"type": "image", "src": "/media/nemo/nemo-overview.jpg", "alt": "NEMO project overview"}
+      {"type": "image", "src": "/media/nemo/nemo-overview.avif", "alt": "NEMO project overview"}
     ],
     "sections": [
       {"index": "01", "title": "Challenge", "layout": "text", "text": "NEMO brings structure, actuation, electronics, controls, and dynamic behavior into one tightly coupled system. This section is ready for the latest project objective, design targets, and operating constraints."},
@@ -43,9 +43,9 @@
     "lede": "A collection of projects completed during my mechanical engineering internship at Zipline.",
     "tools": [],
     "placeholder": "Project media / To be added",
-    "cover": {"src": "/media/zipline-projects/zipline-projects-cover.jpg", "alt": "Zipline projects cover"},
+    "cover": {"src": "/media/zipline-projects/zipline-projects-cover.avif", "alt": "Zipline projects cover"},
     "media": [
-      {"type": "image", "src": "/media/zipline-projects/zipline-projects-overview.jpg", "alt": "Zipline projects overview"}
+      {"type": "image", "src": "/media/zipline-projects/zipline-projects-overview.avif", "alt": "Zipline projects overview"}
     ],
     "sections": [
       {"index": "01", "title": "Projects", "layout": "gallery", "text": "Project details and approved media will be added here.", "media": [{"type": "image", "src": "/media/zipline-projects/zipline-project-01.jpg", "alt": "Zipline project"}]}
@@ -65,9 +65,9 @@
     "summary": "Designed a 3-DOF prosthetic 'third thumb' with pin-jointed phalanges and a wearable hand interface. The prototype integrated a a servo-driven wire-tensioning system mounted onto the hand and wrist for responsive thumb actuation.",
     "lede": "A compact wearable mechanism at the intersection of human factors, mechanical design, and control.",
     "tools": ["CAD", "Rapid Prototyping", "Embedded Systems", "Testing"],
-    "cover": {"src": "/media/third-thumb/third-thumb-cover.jpg", "alt": "Third Thumb project cover"},
+    "cover": {"src": "/media/third-thumb/third-thumb-cover.avif", "alt": "Third Thumb project cover"},
     "media": [
-      {"type": "image", "src": "/media/third-thumb/third-thumb-overview.jpg", "alt": "Third Thumb project overview"}
+      {"type": "image", "src": "/media/third-thumb/third-thumb-overview.avif", "alt": "Third Thumb project overview"}
     ],
     "sections": [
       {"index": "01", "title": "Design Problem", "layout": "text", "text": "Frame the user need, desired motion, comfort considerations, and technical constraints here."},
@@ -90,9 +90,9 @@
     "summary": "Supported the development of a VTOL (Vertical Take-Off and Landing) drone capable of seamlessly transitioning from vertical to horizontal flight. I helped enhance the structural integrity and optimizing the aerodynamic performance of the aircraft.",
     "lede": "Developing an aircraft architecture that transitions between vertical lift and forward flight around a defined mission.",
     "tools": ["CAD", "Airframe Design", "Prototyping", "Flight Testing"],
-    "cover": {"src": "/media/vtol/vtol-cover.jpg", "alt": "VTOL Aircraft project cover"},
+    "cover": {"src": "/media/vtol/vtol-cover.avif", "alt": "VTOL Aircraft project cover"},
     "media": [
-      {"type": "image", "src": "/media/vtol/vtol-overview.jpg", "alt": "VTOL Aircraft project overview"}
+      {"type": "image", "src": "/media/vtol/vtol-overview.avif", "alt": "VTOL Aircraft project overview"}
     ],
     "sections": [
       {"index": "01", "title": "Mission", "layout": "text", "text": "Introduce the payload-drop mission, flight phases, and the requirements that shaped the vehicle."},
@@ -115,9 +115,9 @@
     "summary": "Developed H.A.R.R.Y., a mobile aluminum humanoid robot designed to aid individuals with mobility challenges. This prototype successfully demonstrated its ability to elevate its chassis, perform complex arm movements, and grip and lift objects, culminating in a presentation of its capabilities to industry professionals.",
     "lede": "An early robotics project centered on translating human movement into a physical prototype.",
     "tools": ["CAD", "Fabrication", "Electronics", "Programming"],
-    "cover": {"src": "/media/harry/harry-cover.jpg", "alt": "H.A.R.R.Y. project cover"},
+    "cover": {"src": "/media/harry/harry-cover.avif", "alt": "H.A.R.R.Y. project cover"},
     "media": [
-      {"type": "image", "src": "/media/harry/harry-overview.jpg", "alt": "H.A.R.R.Y. project overview"}
+      {"type": "image", "src": "/media/harry/harry-overview.avif", "alt": "H.A.R.R.Y. project overview"}
     ],
     "sections": [
       {"index": "01", "title": "Concept", "layout": "text", "text": "Describe the intended tasks and the original mechanical concept."},
@@ -139,9 +139,9 @@
     "summary": "As the team captain, I led the development of a competitive robot for the VEX Spin Up competition. The robot was engineered for high-speed disk intake and shooting, along with a custom expansion mechanism, leading to a championship win at the NJ TSA Championships and qualification for both VEX Nationals and World Championships.",
     "lede": "Designing mechanisms under strict game, time, packaging, and reliability constraints.",
     "tools": ["Mechanism Design", "Pneumatics", "Fabrication", "Competition Testing"],
-    "cover": {"src": "/media/vex/vex-cover.jpg", "alt": "VEX Competition Robot project cover"},
+    "cover": {"src": "/media/vex/vex-cover.avif", "alt": "VEX Competition Robot project cover"},
     "media": [
-      {"type": "image", "src": "/media/vex/vex-overview.jpg", "alt": "VEX Competition Robot project overview"}
+      {"type": "image", "src": "/media/vex/vex-overview.avif", "alt": "VEX Competition Robot project overview"}
     ],
     "sections": [
       {"index": "01", "title": "Game Constraints", "layout": "text", "text": "Introduce the scoring objectives and constraints that drove the robot architecture."},
