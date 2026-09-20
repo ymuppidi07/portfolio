@@ -525,6 +525,7 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
 .story-media--rig img { object-fit: contain; }
 .project-story--vtol .story-media--hero { aspect-ratio: 16 / 7; background: #fff; }
 .project-story--vtol .story-media--hero img { object-fit: contain; }
+.project-story--vtol .story-media--mount img { object-fit: contain; }
 .project-story--vtol .story-block--intro { grid-template-columns: minmax(0, 1.05fr) minmax(19rem, .95fr); }
 .project-story--vtol .story-block--mechanism { grid-template-columns: minmax(0, 1.12fr) minmax(18rem, .6fr); }
 .project-story--vtol .story-block--integration { grid-template-columns: minmax(0, 1fr) minmax(25rem, 1fr); }
