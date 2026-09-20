@@ -75,8 +75,9 @@ const renderFooter = (site) => {
 
 const projectVisual = (project) => {
   if (project.cover?.src) {
-    return `<div class="project-card__visual project-card__visual--image">
-      <img src="${escapeHtml(project.cover.src)}" alt="${escapeHtml(project.cover.alt || '')}" loading="lazy" />
+    return `<div class="project-card__visual project-card__visual--image is-empty" data-optional-image>
+      <span class="project-card__placeholder">${escapeHtml(project.placeholder || 'Project image not added')}</span>
+      <img src="${escapeHtml(project.cover.src)}" alt="${escapeHtml(project.cover.alt || '')}" loading="eager" hidden />
       <span class="visual-index">${String(project.priority).padStart(2, '0')}</span>
     </div>`;
   }
@@ -169,7 +170,11 @@ const renderMedia = (media = [], label = 'Project media') => {
     </div>`;
   return `<div class="media-grid">${media.map((item) => {
     if (item.type === 'video') return `<figure><video src="${escapeHtml(item.src)}" ${item.autoplay ? 'autoplay muted loop playsinline' : 'controls'}></video>${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ''}</figure>`;
-    return `<figure><img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt || '')}" loading="lazy" />${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ''}</figure>`;
+    return `<figure class="media-item media-item--image is-empty" data-optional-image>
+      <span class="media-item__placeholder">No image added</span>
+      <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt || '')}" loading="eager" hidden />
+      ${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ''}
+    </figure>`;
   }).join('')}</div>`;
 };
 

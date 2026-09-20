@@ -13,15 +13,18 @@
     "summary": "NEMO is a small-scale humanoid robot designed to mimic human-like proportions, created for research into bipedal locomotion. Standing at approximately 3 feet tall, NEMO was engineered for rapid iteration and practicality, utilizing deep reinforcement learning to develop a functional walking gait.",
     "lede": "Designing the physical platform for a student-built bipedal humanoid—and the iteration loop required to make it walk.",
     "tools": ["CAD", "FEA", "MuJoCo", "ROS 2", "Fabrication", "Testing"],
-    "media": [],
+    "cover": {"src": "/media/nemo/nemo-cover.jpg", "alt": "NEMO project cover"},
+    "media": [
+      {"type": "image", "src": "/media/nemo/nemo-overview.jpg", "alt": "NEMO project overview"}
+    ],
     "sections": [
       {"index": "01", "title": "Challenge", "layout": "text", "text": "NEMO brings structure, actuation, electronics, controls, and dynamic behavior into one tightly coupled system. This section is ready for the latest project objective, design targets, and operating constraints."},
       {"index": "02", "title": "System Architecture", "layout": "diagram", "text": "Use this section to explain how the mechanical, electrical, and control subsystems connect without exposing unnecessary implementation detail.", "items": ["Structure & joints", "Actuation", "Compute & controls", "Power & electronics"]},
-      {"index": "03", "title": "Mechanical Design", "layout": "media", "text": "Add current CAD renders, exploded assemblies, mechanism details, and concise decisions here."},
+      {"index": "03", "title": "Mechanical Design", "layout": "media", "text": "Add current CAD renders, exploded assemblies, mechanism details, and concise decisions here.", "media": [{"type": "image", "src": "/media/nemo/nemo-mechanical-design.jpg", "alt": "NEMO mechanical design"}]},
       {"index": "04", "title": "Design Iteration", "layout": "steps", "text": "Show the engineering progression rather than only the final form.", "items": ["Initial architecture", "Prototype findings", "Mechanical redesign", "Integrated revision"]},
-      {"index": "05", "title": "Engineering Analysis", "layout": "media", "text": "A flexible area for load cases, FEA, mass-property studies, tolerance work, or other analysis."},
-      {"index": "06", "title": "Simulation", "layout": "split", "text": "Pair simulation footage and results with only the context needed to understand what was learned."},
-      {"index": "07", "title": "Fabrication & Testing", "layout": "gallery", "text": "Document manufacturing, assembly, test setups, failures, and fixes as a visual sequence."},
+      {"index": "05", "title": "Engineering Analysis", "layout": "media", "text": "A flexible area for load cases, FEA, mass-property studies, tolerance work, or other analysis.", "media": [{"type": "image", "src": "/media/nemo/nemo-engineering-analysis.jpg", "alt": "NEMO engineering analysis"}]},
+      {"index": "06", "title": "Simulation", "layout": "split", "text": "Pair simulation footage and results with only the context needed to understand what was learned.", "media": [{"type": "image", "src": "/media/nemo/nemo-simulation.jpg", "alt": "NEMO simulation"}]},
+      {"index": "07", "title": "Fabrication & Testing", "layout": "gallery", "text": "Document manufacturing, assembly, test setups, failures, and fixes as a visual sequence.", "media": [{"type": "image", "src": "/media/nemo/nemo-fabrication-testing.jpg", "alt": "NEMO fabrication and testing"}]},
       {"index": "08", "title": "Results", "layout": "results", "text": "Add verified outcomes and current system status when the latest material is ready.", "items": []}
     ]
   },
@@ -40,9 +43,12 @@
     "lede": "A collection of projects completed during my mechanical engineering internship at Zipline.",
     "tools": [],
     "placeholder": "Project media / To be added",
-    "media": [],
+    "cover": {"src": "/media/zipline-projects/zipline-projects-cover.jpg", "alt": "Zipline projects cover"},
+    "media": [
+      {"type": "image", "src": "/media/zipline-projects/zipline-projects-overview.jpg", "alt": "Zipline projects overview"}
+    ],
     "sections": [
-      {"index": "01", "title": "Projects", "layout": "gallery", "text": "Project details and approved media will be added here.", "media": []}
+      {"index": "01", "title": "Projects", "layout": "gallery", "text": "Project details and approved media will be added here.", "media": [{"type": "image", "src": "/media/zipline-projects/zipline-project-01.jpg", "alt": "Zipline project"}]}
     ]
   },
   {
@@ -59,10 +65,13 @@
     "summary": "Designed a 3-DOF prosthetic 'third thumb' with pin-jointed phalanges and a wearable hand interface. The prototype integrated a a servo-driven wire-tensioning system mounted onto the hand and wrist for responsive thumb actuation.",
     "lede": "A compact wearable mechanism at the intersection of human factors, mechanical design, and control.",
     "tools": ["CAD", "Rapid Prototyping", "Embedded Systems", "Testing"],
-    "media": [],
+    "cover": {"src": "/media/third-thumb/third-thumb-cover.jpg", "alt": "Third Thumb project cover"},
+    "media": [
+      {"type": "image", "src": "/media/third-thumb/third-thumb-overview.jpg", "alt": "Third Thumb project overview"}
+    ],
     "sections": [
       {"index": "01", "title": "Design Problem", "layout": "text", "text": "Frame the user need, desired motion, comfort considerations, and technical constraints here."},
-      {"index": "02", "title": "Mechanism", "layout": "media", "text": "Add mechanism studies, attachment geometry, routing, and component packaging."},
+      {"index": "02", "title": "Mechanism", "layout": "media", "text": "Add mechanism studies, attachment geometry, routing, and component packaging.", "media": [{"type": "image", "src": "/media/third-thumb/third-thumb-mechanism.jpg", "alt": "Third Thumb mechanism"}]},
       {"index": "03", "title": "Prototyping", "layout": "steps", "text": "Use a short visual sequence to show how fit, motion, and controllability changed through testing.", "items": ["Form study", "Motion prototype", "Wearable integration", "User testing"]},
       {"index": "04", "title": "Outcome", "layout": "results", "text": "Reserve this area for validated performance and learning."}
     ]
@@ -81,11 +90,14 @@
     "summary": "Supported the development of a VTOL (Vertical Take-Off and Landing) drone capable of seamlessly transitioning from vertical to horizontal flight. I helped enhance the structural integrity and optimizing the aerodynamic performance of the aircraft.",
     "lede": "Developing an aircraft architecture that transitions between vertical lift and forward flight around a defined mission.",
     "tools": ["CAD", "Airframe Design", "Prototyping", "Flight Testing"],
-    "media": [],
+    "cover": {"src": "/media/vtol/vtol-cover.jpg", "alt": "VTOL Aircraft project cover"},
+    "media": [
+      {"type": "image", "src": "/media/vtol/vtol-overview.jpg", "alt": "VTOL Aircraft project overview"}
+    ],
     "sections": [
       {"index": "01", "title": "Mission", "layout": "text", "text": "Introduce the payload-drop mission, flight phases, and the requirements that shaped the vehicle."},
       {"index": "02", "title": "Aircraft Architecture", "layout": "diagram", "text": "Show the relationship between lift, tilt mechanism, airframe, payload, avionics, and control surfaces.", "items": ["Tilt mechanism", "Airframe", "Propulsion", "Payload system"]},
-      {"index": "03", "title": "Mechanical Development", "layout": "gallery", "text": "Add CAD, fabrication, and assembly media with concise engineering captions."},
+      {"index": "03", "title": "Mechanical Development", "layout": "gallery", "text": "Add CAD, fabrication, and assembly media with concise engineering captions.", "media": [{"type": "image", "src": "/media/vtol/vtol-mechanical-development.jpg", "alt": "VTOL mechanical development"}]},
       {"index": "04", "title": "Test & Iteration", "layout": "results", "text": "Document verified test results and the design changes they produced."}
     ]
   },
@@ -103,10 +115,13 @@
     "summary": "Developed H.A.R.R.Y., a mobile aluminum humanoid robot designed to aid individuals with mobility challenges. This prototype successfully demonstrated its ability to elevate its chassis, perform complex arm movements, and grip and lift objects, culminating in a presentation of its capabilities to industry professionals.",
     "lede": "An early robotics project centered on translating human movement into a physical prototype.",
     "tools": ["CAD", "Fabrication", "Electronics", "Programming"],
-    "media": [],
+    "cover": {"src": "/media/harry/harry-cover.jpg", "alt": "H.A.R.R.Y. project cover"},
+    "media": [
+      {"type": "image", "src": "/media/harry/harry-overview.jpg", "alt": "H.A.R.R.Y. project overview"}
+    ],
     "sections": [
       {"index": "01", "title": "Concept", "layout": "text", "text": "Describe the intended tasks and the original mechanical concept."},
-      {"index": "02", "title": "Build", "layout": "gallery", "text": "Add prototype, assembly, and testing images."},
+      {"index": "02", "title": "Build", "layout": "gallery", "text": "Add prototype, assembly, and testing images.", "media": [{"type": "image", "src": "/media/harry/harry-build.jpg", "alt": "H.A.R.R.Y. build"}]},
       {"index": "03", "title": "Learning", "layout": "results", "text": "Summarize what this early system taught you and how it informed later robotics work."}
     ]
   },
@@ -124,7 +139,10 @@
     "summary": "As the team captain, I led the development of a competitive robot for the VEX Spin Up competition. The robot was engineered for high-speed disk intake and shooting, along with a custom expansion mechanism, leading to a championship win at the NJ TSA Championships and qualification for both VEX Nationals and World Championships.",
     "lede": "Designing mechanisms under strict game, time, packaging, and reliability constraints.",
     "tools": ["Mechanism Design", "Pneumatics", "Fabrication", "Competition Testing"],
-    "media": [],
+    "cover": {"src": "/media/vex/vex-cover.jpg", "alt": "VEX Competition Robot project cover"},
+    "media": [
+      {"type": "image", "src": "/media/vex/vex-overview.jpg", "alt": "VEX Competition Robot project overview"}
+    ],
     "sections": [
       {"index": "01", "title": "Game Constraints", "layout": "text", "text": "Introduce the scoring objectives and constraints that drove the robot architecture."},
       {"index": "02", "title": "Mechanisms", "layout": "diagram", "text": "Organize intake, launch, lift, and endgame systems into a clear mechanical story.", "items": ["Intake", "Indexer", "Flywheel", "Expansion system"]},

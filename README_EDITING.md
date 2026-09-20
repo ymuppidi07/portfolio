@@ -51,22 +51,46 @@ For the homepage profile photo, add or replace `public/images/profile.png`. Keep
 
 Experience logo slots work the same way. Add the real logo files with these exact paths:
 
-- `public/images/experience/zipline-logo.png`
-- `public/images/experience/johnson-johnson-medtech-logo.png`
-- `public/images/experience/dupont-logo.png`
-- `public/images/experience/purdue-humanoid-robotics-club-logo.png`
+- `public/images/experience/zipline-logo.jpg`
+- `public/images/experience/johnson-johnson-medtech-logo.jpg`
+- `public/images/experience/dupont-logo.jpg`
+- `public/images/experience/purdue-humanoid-robotics-club-logo.jpg`
 
 Keeping those filenames means no content or JavaScript changes are needed. To use a different filename, update that experience entry's `logo.src` in `content/site.json`.
 
 ## 3. Add a new image
 
-First copy the real image into the matching project folder. Then add it to the project in `content/projects.json`.
+Card and overview image slots are already configured. Add a real JPG using one of these exact paths and the site will replace the neutral placeholder automatically:
+
+| Project | Card image | Project-page overview image |
+| --- | --- | --- |
+| NEMO | `public/media/nemo/nemo-cover.jpg` | `public/media/nemo/nemo-overview.jpg` |
+| Zipline Projects | `public/media/zipline-projects/zipline-projects-cover.jpg` | `public/media/zipline-projects/zipline-projects-overview.jpg` |
+| Third Thumb | `public/media/third-thumb/third-thumb-cover.jpg` | `public/media/third-thumb/third-thumb-overview.jpg` |
+| VTOL Aircraft | `public/media/vtol/vtol-cover.jpg` | `public/media/vtol/vtol-overview.jpg` |
+| H.A.R.R.Y. | `public/media/harry/harry-cover.jpg` | `public/media/harry/harry-overview.jpg` |
+| VEX Robot | `public/media/vex/vex-cover.jpg` | `public/media/vex/vex-overview.jpg` |
+
+Several project-section image slots are also ready:
+
+- `public/media/nemo/nemo-mechanical-design.jpg`
+- `public/media/nemo/nemo-engineering-analysis.jpg`
+- `public/media/nemo/nemo-simulation.jpg`
+- `public/media/nemo/nemo-fabrication-testing.jpg`
+- `public/media/zipline-projects/zipline-project-01.jpg`
+- `public/media/third-thumb/third-thumb-mechanism.jpg`
+- `public/media/vtol/vtol-mechanical-development.jpg`
+- `public/media/harry/harry-build.jpg`
+
+You do not need to edit JSON when using those exact filenames. The file contents must really be JPEG data because the names end in `.jpg`.
+
+For any additional image beyond the configured slots, copy it into the matching project folder and add it to the project in `content/projects.json`.
 
 To use it as the image on the Projects page card, add:
 
 ```json
 "cover": {
-  "src": "/media/nemo/nemo-overview.webp",
+  "src": "/media/nemo/nemo-cover.jpg",
   "alt": "NEMO humanoid robot standing in the lab"
 }
 ```
@@ -77,7 +101,7 @@ To show images or video at the top of the project page, add items to the project
 "media": [
   {
     "type": "image",
-    "src": "/media/nemo/nemo-overview.webp",
+    "src": "/media/nemo/nemo-overview.jpg",
     "alt": "NEMO humanoid robot standing in the lab",
     "caption": "Current NEMO prototype"
   }
