@@ -24,6 +24,7 @@ JSON requires double quotation marks and commas between items. When editing, cop
 
 The existing project media folders are:
 
+- `public/media/ariel/`
 - `public/media/nemo/`
 - `public/media/zipline-projects/`
 - `public/media/third-thumb/`
@@ -60,10 +61,11 @@ Keeping those filenames means no content or JavaScript changes are needed. To us
 
 ## 3. Add a new image
 
-Card and overview image slots are already configured. Add a real JPG using one of these exact paths and the site will replace the neutral placeholder automatically:
+Card and overview image slots are already configured. Add a real image using one of these exact paths and the site will replace the neutral placeholder automatically:
 
 | Project | Card image | Project-page overview image |
 | --- | --- | --- |
+| Ariel | `public/media/ariel/ariel-cover.avif` | Work-in-progress page intentionally has no overview image yet |
 | NEMO | `public/media/nemo/nemo-cover.avif` | `public/media/nemo/nemo-overview.avif` |
 | Zipline Projects | `public/media/zipline-projects/zipline-projects-cover.avif` | `public/media/zipline-projects/zipline-projects-overview.avif` |
 | Third Thumb | `public/media/third-thumb/third-thumb-cover.avif` | `public/media/third-thumb/third-thumb-overview.avif` |
@@ -171,7 +173,18 @@ Save the file and the live preview will update automatically. To permanently del
 
 Change each project's `priority` number in `content/projects.json`. Lower numbers appear first. Save the file to update the live preview.
 
-## 9. Update Zipline Projects
+## 9. Update Ariel
+
+Find `"slug": "ariel"` in `content/projects.json`.
+
+- Change `summary` and `lede` when the approved project description is ready.
+- Replace `projectState: "work-in-progress"` with the normal project fields and sections when you are ready to expand the page.
+- Add `public/media/ariel/ariel-cover.avif` to replace the neutral card placeholder automatically.
+- Add future images and videos inside `public/media/ariel/`.
+
+The card remains intentionally image-free until you add the real cover file.
+
+## 10. Update Zipline Projects
 
 Find `"slug": "zipline-projects"` in `content/projects.json`.
 
@@ -184,13 +197,13 @@ Find `"slug": "zipline-projects"` in `content/projects.json`.
 
 As long as you follow the existing JSON pattern, the Zipline page can be fully updated without editing React or JavaScript.
 
-## 10. Replace the résumé
+## 11. Replace the résumé
 
 Replace `public/assets/Yashwanth_Muppidi_Resume.pdf` with the new PDF and keep the same filename. The Resume link will keep working.
 
 If you use a different filename, also update the `resume` value in `content/site.json`.
 
-## 11. Preview changes
+## 12. Preview changes
 
 From this repository folder, run:
 

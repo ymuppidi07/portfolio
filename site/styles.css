@@ -240,7 +240,7 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
   color: var(--ink);
 }
 .project-card--flagship { grid-template-columns: minmax(22rem, .82fr) minmax(0, 1.18fr); }
-.project-card--standard { grid-template-rows: auto 1fr; align-self: start; }
+.project-card--standard { grid-template-rows: auto 1fr; }
 .project-card__visual {
   position: relative;
   min-height: 0;
@@ -283,7 +283,7 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
 .project-card__body { display: flex; flex-direction: column; min-height: 20rem; padding: clamp(1.25rem, 3vw, 2.5rem); }
 .project-card--flagship .project-card__body { min-height: 0; }
 .project-card__meta { display: flex; justify-content: space-between; gap: 1rem; color: #646868; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
-.project-card h2 { margin: auto 0 1rem; padding-top: 3rem; font-family: var(--display); font-size: clamp(2rem, 3.2vw, 3.5rem); font-weight: 500; letter-spacing: -.05em; line-height: .95; }
+.project-card h2 { margin: 2.5rem 0 1rem; font-family: var(--display); font-size: clamp(2rem, 3.2vw, 3.5rem); font-weight: 500; letter-spacing: -.05em; line-height: .95; }
 .project-card__body > p {
   display: -webkit-box;
   max-width: 30rem;
@@ -294,6 +294,7 @@ svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-wi
   -webkit-line-clamp: 6;
 }
 .project-card--flagship .project-card__body > p { -webkit-line-clamp: 9; }
+.project-card .text-link { margin-top: auto; }
 .text-link, .button-link { display: inline-flex; align-items: center; gap: .55rem; width: fit-content; font-size: .78rem; font-weight: 650; letter-spacing: .07em; text-transform: uppercase; }
 .text-link svg, .button-link svg, .additional-card svg, .zipline-list svg { transition: transform .25s ease; }
 a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .zipline-list a:hover svg { transform: translateX(.35rem); }
@@ -312,6 +313,7 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   object-position: center;
   transition: transform .65s cubic-bezier(.2,.75,.2,1);
 }
+.project-card__visual--image img[hidden] { display: none; }
 .project-card:hover .project-card__visual--image img { transform: scale(1.018); }
 .project-card--nemo .project-card__visual--image img,
 .project-card--vtol .project-card__visual--image img,
@@ -322,6 +324,20 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
 .project-card--harry .project-card__visual--image,
 .project-card--vex .project-card__visual--image { background: #fff; }
 .project-card--third-thumb .project-card__visual--image img { object-position: center 46%; }
+.project-card--ariel .project-card__visual.is-empty {
+  display: grid;
+  place-items: center;
+}
+.project-card--ariel .project-card__placeholder {
+  position: static;
+  padding: 0;
+  border: 0;
+  color: rgba(255,255,255,.78);
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 2.6vw, 2.6rem);
+  letter-spacing: -.035em;
+  text-transform: none;
+}
 .project-card__visual--image:not(.is-empty) .project-card__placeholder { display: none; }
 .project-card__placeholder {
   position: absolute;
@@ -594,7 +610,7 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   .projects-index .project-card--vtol .project-card__visual { aspect-ratio: 16 / 9; }
   .project-card--standard { grid-template-rows: auto auto; }
   .project-card__body { min-height: 0; }
-  .project-card h2 { padding-top: 3.5rem; }
+  .project-card h2 { margin-top: 2.5rem; }
   .zipline-role { grid-template-columns: 1fr; }
   .zipline-role div { min-height: 6rem; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.28); }
   .zipline-role div:last-child { border-bottom: 0; }

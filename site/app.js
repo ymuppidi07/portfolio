@@ -133,7 +133,7 @@ const renderProjects = (site, projects) => {
   main.innerHTML = `
     <div class="projects-page section-light">
       <section class="projects-index page-pad" aria-label="Engineering projects">
-        ${visible.map((project, index) => projectCard(project, index === 0 ? 'flagship' : 'standard')).join('')}
+        ${visible.map((project) => projectCard(project, 'standard')).join('')}
       </section>
     </div>`;
 };
@@ -201,9 +201,10 @@ const renderWorkInProgressProject = (project) => {
   main.innerHTML = `
     <article class="project-placeholder-page">
       <header class="case-hero wip-hero section-dark page-pad">
-        <div class="case-hero__top"><a href="/projects/">← All projects</a></div>
-        <p class="eyebrow">Project</p>
+        <div class="case-hero__top"><a href="/projects/">← All projects</a><span>${escapeHtml(project.year)}</span></div>
+        <p class="eyebrow">${escapeHtml(project.organization)}</p>
         <h1>${escapeHtml(project.title)}</h1>
+        <p class="case-lede">${escapeHtml(project.summary)}</p>
         <div class="wip-status"><span>${escapeHtml(project.placeholder || 'Work in Progress')}</span></div>
       </header>
     </article>`;
