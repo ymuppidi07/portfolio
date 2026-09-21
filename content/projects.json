@@ -92,7 +92,7 @@
   },
   {
     "slug": "zipline",
-    "title": "Zipline",
+    "title": "Zipline Projects",
     "shortTitle": "Zipline",
     "group": "projects",
     "status": "visible",
@@ -101,11 +101,11 @@
     "year": "2026",
     "organization": "Zipline",
     "role": "Mechanical Engineering Intern",
-    "summary": "Selected mechanical design, prototyping, test engineering, and hardware-integration work for UAV and ground-support systems.",
+    "summary": "Some of the work I did with my time at Zipline",
     "lede": "During my internship at Zipline, I worked across mechanical design, prototyping, test engineering, manufacturing, and hardware integration for UAV and ground-support systems. Below is some of the work I did with my time at Zipline",
     "tools": ["Mechanical Design", "NX", "Prototyping", "Test Engineering", "Manufacturing"],
     "pageLayout": "zipline",
-    "cover": {"src": "/media/zipline/drone-transport-aircraft.png", "alt": "Drone transport fixture supporting an aircraft on a scissor lift"},
+    "cover": {"src": "/media/zipline-projects/zipline-projects-cover.avif", "alt": "Zipline projects cover"},
     "ziplineStory": {
       "publicNote": "Proprietary details intentionally omitted",
       "featured": [
