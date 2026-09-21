@@ -2,7 +2,7 @@
   "name": "Yashwanth Muppidi",
   "shortName": "YM",
   "eyebrow": "Mechanical Engineer",
-  "headline": "I’m a mechanical engineering student at Purdue University with experience across humanoid robotics and UAV hardware to surgical robotics and manufacturing.\n\nInterned at Zipline, J&J MedTech, & DuPont\n\nHead of Engineering of Humanoid Robotics Club",
+  "headline": "I’m a mechanical engineering student at Purdue University building hardware across humanoid robotics, autonomous aircraft, surgical robotics, and manufacturing.",
   "intro": "Mechanical engineer working across humanoid robotics, product development, mechatronics, and autonomous systems.",
   "location": "Purdue University · West Lafayette, Indiana",
   "home": {
@@ -15,8 +15,13 @@
       "alt": "Portrait of Yashwanth Muppidi",
       "placeholder": "Profile photo"
     },
-    "aboutEyebrow": "About Me",
-    "aboutTitle": " ",
+    "highlights": [
+      "Engineering internships at Zipline, J&J MedTech, and DuPont",
+      "Head of Engineering, Purdue Humanoid Robotics Club"
+    ],
+    "aboutEyebrow": "Currently",
+    "aboutTitle": "Purdue University",
+    "aboutText": "B.S. Mechanical Engineering · 2027",
     "primaryCta": "View projects"
   },
   "projectsPage": {

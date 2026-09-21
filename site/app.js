@@ -102,6 +102,8 @@ const projectCard = (project, size = 'standard') => {
 
 const renderHome = (site) => {
   const home = site.home;
+  const highlights = (home.highlights || []).map((item, index) => `
+    <li><span>${String(index + 1).padStart(2, '0')}</span><p>${escapeHtml(item)}</p></li>`).join('');
   main.innerHTML = `
     <section class="hero section-dark">
       ${home.heroMedia?.src ? `<div class="hero-media"><img src="${escapeHtml(home.heroMedia.src)}" alt="${escapeHtml(home.heroMedia.alt || '')}" /></div>` : ''}
@@ -111,6 +113,7 @@ const renderHome = (site) => {
         <p class="eyebrow">${escapeHtml(site.eyebrow)}</p>
         <h1>${home.heroName.map((line) => `<span>${escapeHtml(line)}</span>`).join('')}</h1>
         <p class="hero-statement">${escapeHtml(site.headline)}</p>
+        ${highlights ? `<ul class="hero-highlights">${highlights}</ul>` : ''}
       </div>
       <aside class="hero-about" aria-label="Profile and projects">
         <div class="hero-about__portrait is-empty" data-optional-image>
@@ -118,6 +121,7 @@ const renderHome = (site) => {
           ${home.profileImage?.src ? `<img src="${escapeHtml(home.profileImage.src)}" alt="${escapeHtml(home.profileImage.alt || '')}" loading="eager" hidden />` : ''}
         </div>
         <div class="hero-about__content">
+          <p class="eyebrow">${escapeHtml(home.aboutEyebrow || '')}</p>
           <h2>${escapeHtml(home.aboutTitle)}</h2>
           ${home.aboutText ? `<p>${escapeHtml(home.aboutText)}</p>` : ''}
           <a class="button-link button-link--primary" href="/projects/">${escapeHtml(home.primaryCta)} ${arrow}</a>
