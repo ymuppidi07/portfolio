@@ -236,6 +236,76 @@ const renderNemoMedia = (media, className = '') => {
   </figure>`;
 };
 
+const renderZiplineMedia = (media, className = '') => {
+  if (!media?.src) return '';
+  return `<figure class="zipline-media media-item media-item--image is-empty ${className}" data-optional-image>
+    <span class="media-item__placeholder">Approved project image</span>
+    <img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt || '')}" loading="eager" hidden />
+    ${media.caption ? `<figcaption>${escapeHtml(media.caption)}</figcaption>` : ''}
+  </figure>`;
+};
+
+const renderZiplineProject = (project, projects) => {
+  const story = project.ziplineStory || {};
+  const featured = story.featured || [];
+  const additional = story.additional || [];
+  const visible = projects
+    .filter((item) => item.status === 'visible' && item.group !== 'zipline')
+    .sort((a, b) => a.priority - b.priority);
+  const currentIndex = visible.findIndex((item) => item.slug === project.slug);
+  const next = visible[(currentIndex + 1) % visible.length];
+  const meta = [
+    project.role ? `<div><span>Role</span><strong>${escapeHtml(project.role)}</strong></div>` : '',
+    project.tools?.length ? `<div><span>Focus</span><strong>${project.tools.map(escapeHtml).join(' · ')}</strong></div>` : ''
+  ].join('');
+  const featuredSections = featured.map((item, sectionIndex) => {
+    const media = (item.media || []).map((entry, imageIndex) => renderZiplineMedia(entry, imageIndex === 0 ? 'is-primary' : '')).join('');
+    const metrics = (item.metrics || []).map((entry) => `<div><strong>${escapeHtml(entry.value)}</strong><span>${escapeHtml(entry.label)}</span></div>`).join('');
+    return `<section class="zipline-feature ${sectionIndex === 0 ? 'zipline-feature--lead' : ''} page-pad">
+      <div class="zipline-feature__heading">
+        <p class="eyebrow">${escapeHtml(item.eyebrow || `Featured project ${String(sectionIndex + 1).padStart(2, '0')}`)}</p>
+        <h2>${escapeHtml(item.title || '')}</h2>
+      </div>
+      <div class="zipline-feature__copy">
+        <p class="zipline-feature__summary">${escapeHtml(item.summary || '')}</p>
+        ${item.details ? `<p>${escapeHtml(item.details)}</p>` : ''}
+      </div>
+      ${metrics ? `<div class="zipline-metrics">${metrics}</div>` : ''}
+      ${media ? `<div class="zipline-feature__media zipline-feature__media--${(item.media || []).length}">${media}</div>` : ''}
+    </section>`;
+  }).join('');
+  const additionalCards = additional.map((item, index) => `<article class="zipline-additional__card ${item.media ? 'has-media' : ''}">
+    ${item.media ? renderZiplineMedia(item.media) : ''}
+    <div>
+      <span class="zipline-additional__index">${String(index + 1).padStart(2, '0')}</span>
+      <h3>${escapeHtml(item.title || '')}</h3>
+      <p>${escapeHtml(item.text || '')}</p>
+    </div>
+  </article>`).join('');
+
+  main.innerHTML = `
+    <article class="case-study zipline-story">
+      <header class="case-hero zipline-hero section-dark page-pad">
+        <div class="case-hero__top"><a href="/projects/">← All projects</a><span>${escapeHtml(project.year)}</span></div>
+        <p class="eyebrow">${escapeHtml(project.organization)}</p>
+        <h1>${escapeHtml(project.title)}</h1>
+        <p class="case-lede">${escapeHtml(project.lede)}</p>
+        <div class="case-meta">${meta}</div>
+        ${story.publicNote ? `<p class="confidential-note">${escapeHtml(story.publicNote)}</p>` : ''}
+      </header>
+      ${featuredSections}
+      ${additionalCards ? `<section class="zipline-additional page-pad">
+        <div class="section-heading">
+          <div><span class="section-number">04</span><span class="eyebrow">Additional work</span></div>
+          <h2>Selected supporting projects</h2>
+          <p>Compact test and integration work completed alongside the featured programs.</p>
+        </div>
+        <div class="zipline-additional__grid">${additionalCards}</div>
+      </section>` : ''}
+      <nav class="next-project page-pad" aria-label="Next project"><span>Next project</span><a href="${pathForProject(next)}"><strong>${escapeHtml(next.title)}</strong>${arrow}</a></nav>
+    </article>`;
+};
+
 const renderNemoProject = (project, projects) => {
   const story = project.nemoStory || {};
   const visible = projects
@@ -363,6 +433,7 @@ const renderProject = (projects) => {
   const project = projects.find((item) => item.slug === slug);
   if (!project || project.status !== 'visible') return renderNotFound();
   if (project.projectState === 'work-in-progress') return renderWorkInProgressProject(project);
+  if (project.pageLayout === 'zipline') return renderZiplineProject(project, projects);
   if (project.pageLayout === 'nemo') return renderNemoProject(project, projects);
   if (project.pageLayout === 'narrative') return renderNarrativeProject(project, projects);
 

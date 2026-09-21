@@ -26,7 +26,7 @@ The existing project media folders are:
 
 - `public/media/ariel/`
 - `public/media/nemo/`
-- `public/media/zipline-projects/`
+- `public/media/zipline/`
 - `public/media/third-thumb/`
 - `public/media/vtol/`
 - `public/media/harry/`
@@ -67,7 +67,7 @@ Card and overview image slots are already configured. Add a real image using one
 | --- | --- | --- |
 | Ariel | `public/media/ariel/ariel-cover.avif` | Work-in-progress page intentionally has no overview image yet |
 | NEMO | `public/media/nemo/nemo-current-robot.jpg` | Narrative page uses the curated NEMO images and videos listed below |
-| Zipline Projects | `public/media/zipline-projects/zipline-projects-cover.avif` | `public/media/zipline-projects/zipline-projects-overview.avif` |
+| Zipline | `public/media/zipline/drone-transport-aircraft.png` | Curated layout uses the approved Zipline images listed below |
 | Third Thumb | `public/media/third-thumb/third-thumb-cover.avif` | Narrative page uses the supplied `third-thumb-*.png` files in the same folder |
 | VTOL Aircraft | `public/media/vtol/vtol-cover.avif` | Narrative page uses the supplied `vtol-*.png` files in the same folder |
 | H.A.R.R.Y. | `public/media/harry/harry-cover.avif` | `public/media/harry/harry-overview.avif` |
@@ -79,7 +79,7 @@ Several project-section image slots are also ready:
 - `public/media/nemo/nemo-engineering-analysis.jpg`
 - `public/media/nemo/nemo-simulation.jpg`
 - `public/media/nemo/nemo-fabrication-testing.jpg`
-- `public/media/zipline-projects/zipline-project-01.jpg`
+- `public/media/zipline/drone-transport-aircraft.png`
 - `public/media/third-thumb/third-thumb-mechanism.jpg`
 - `public/media/vtol/vtol-mechanical-development.jpg`
 - `public/media/harry/harry-build.jpg`
@@ -234,18 +234,18 @@ Find `"slug": "ariel"` in `content/projects.json`.
 
 The card remains intentionally image-free until you add the real cover file.
 
-## 10. Update Zipline Projects
+## 10. Update Zipline
 
-Find `"slug": "zipline-projects"` in `content/projects.json`.
+Find `"slug": "zipline"` in `content/projects.json`. All page-specific content is inside `ziplineStory`.
 
-1. Edit `summary` and `lede` with the approved overview text.
-2. Add or update project-page objects inside `sections` for each project blurb.
-3. Put approved media in `public/media/zipline-projects/`.
-4. Add a `cover`, top-level `media`, or section-level `media` entries using those files.
-5. Keep confidential or unapproved project details out of the public content file.
-6. Save the file to update the live preview.
+- `featured` controls the three large case-study sections. Reorder the objects to reorder the projects, remove an object to hide a project, or copy an existing object to add another.
+- `additional` controls the compact supporting-work cards. The same reorder, remove, and copy pattern applies.
+- `metrics` is optional and may be added to any featured project.
+- `media` accepts one or more approved image objects with `src`, `alt`, and optional `caption` fields.
+- Put approved media in `public/media/zipline/` and reference it with a path beginning `/media/zipline/`.
+- Keep confidential or unapproved details and images out of both the public folder and content file.
 
-As long as you follow the existing JSON pattern, the Zipline page can be fully updated without editing React or JavaScript.
+The Zipline renderer reads these arrays automatically, so adding, removing, or reordering Zipline projects does not require editing JavaScript.
 
 ## 11. Replace the résumé
 

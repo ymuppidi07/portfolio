@@ -91,8 +91,8 @@
     "sections": []
   },
   {
-    "slug": "zipline-projects",
-    "title": "Zipline Projects",
+    "slug": "zipline",
+    "title": "Zipline",
     "shortTitle": "Zipline",
     "group": "projects",
     "status": "visible",
@@ -101,17 +101,67 @@
     "year": "2026",
     "organization": "Zipline",
     "role": "Mechanical Engineering Intern",
-    "summary": "Some of the projects I worked on while I was interning at Zipline from UAV data-offloaders to dynamic on-field fixtures for drones",
-    "lede": "A collection of projects completed during my mechanical engineering internship at Zipline.",
-    "tools": [],
-    "placeholder": "Project media / To be added",
-    "cover": {"src": "/media/zipline-projects/zipline-projects-cover.avif", "alt": "Zipline projects cover"},
-    "media": [
-      {"type": "image", "src": "/media/zipline-projects/zipline-projects-overview.avif", "alt": "Zipline projects overview"}
-    ],
-    "sections": [
-      {"index": "01", "title": "Projects", "layout": "gallery", "text": "Project details and approved media will be added here.", "media": [{"type": "image", "src": "/media/zipline-projects/zipline-project-01.jpg", "alt": "Zipline project"}]}
-    ]
+    "summary": "Selected mechanical design, prototyping, test engineering, and hardware-integration work for UAV and ground-support systems.",
+    "lede": "During my internship at Zipline, I worked across mechanical design, prototyping, test engineering, manufacturing, and hardware integration for UAV and ground-support systems.",
+    "tools": ["Mechanical Design", "NX", "Prototyping", "Test Engineering", "Manufacturing"],
+    "pageLayout": "zipline",
+    "cover": {"src": "/media/zipline/drone-transport-aircraft.png", "alt": "Drone transport fixture supporting an aircraft on a scissor lift"},
+    "ziplineStory": {
+      "publicNote": "Selected public work · Proprietary details intentionally omitted",
+      "featured": [
+        {
+          "eyebrow": "Featured project 01",
+          "title": "Drone Transport Fixture",
+          "summary": "Designed and validated a rail-guided, ratcheting fixture for transferring a VTOL aircraft between ground level and a scissor lift, making the operation safer and possible with two operators.",
+          "details": "I developed the system in NX around a custom ratcheting mechanism, T-slot extrusion, and sheet-metal structure. First-principles strength and bending calculations informed component sizing, while 3D-printed parts, COTS hardware, quick-turn fabrication, and operator fit checks accelerated iteration and field validation.",
+          "metrics": [
+            {"value": "3 → 2", "label": "Operators required"},
+            {"value": "≈80%", "label": "Reduction in field operation time"},
+            {"value": "Deployed", "label": "Commercial operations"}
+          ],
+          "media": [
+            {"src": "/media/zipline/drone-transport-aircraft.png", "alt": "Completed transport fixture supporting an aircraft on a scissor lift", "caption": "Completed system during field operation"},
+            {"src": "/media/zipline/drone-transport-rails.png", "alt": "Rail-guided drone transport fixture installed on a scissor lift", "caption": "Rail-guided fixture structure"}
+          ]
+        },
+        {
+          "eyebrow": "Featured project 02",
+          "title": "Portable UAV Data Offloader",
+          "summary": "Developed a portable, plug-and-play system for downloading aircraft logs in the field.",
+          "details": "I co-designed the custom PCBA and mechanical packaging around a compact computer, microcontroller, modular batteries, user interface, cooling, and supporting COTS hardware. The enclosure and mounting architecture prioritized field portability, DFM/DFA, and production of approximately 50 units, using MJF-printed components where appropriate.",
+          "media": [
+            {"src": "/media/zipline/uav-data-offloader-cad.png", "alt": "CAD model of the portable UAV data offloader enclosure and battery system", "caption": "Portable enclosure and system packaging"}
+          ]
+        },
+        {
+          "eyebrow": "Featured project 03",
+          "title": "Structural Stability Testing",
+          "summary": "Deployed RTK GNSS instrumentation to monitor the positional and elevation stability of ground infrastructure over time.",
+          "details": "I developed a Python workflow to process measurements from multiple receivers and generate analysis and reports, with weather and rainfall data available as environmental context. The work centered on repeatable instrumentation, trend evaluation, and clear reporting.",
+          "media": [
+            {"src": "/media/zipline/structural-stability-test.png", "alt": "Outdoor structural stability instrumentation and tower setup", "caption": "RTK instrumentation deployed for structural monitoring"}
+          ]
+        }
+      ],
+      "additional": [
+        {
+          "title": "Electronics EOL Testing",
+          "text": "Built an end-of-line hardware test enclosure using machined, laser-cut, and 3D-printed components, integrating custom fixturing and electrical interfaces to validate PCBA, RF, and electromechanical subsystems. Integrated a Teensy-based RF test system with IIR filtering and configurable pass/fail thresholds.",
+          "media": {"src": "/media/zipline/electronics-eol-enclosure.png", "alt": "Finished electronics end-of-line test enclosure with keypad and display"}
+        },
+        {
+          "title": "PTC Heater Characterization",
+          "text": "Designed and executed bench testing to characterize steady-state heater surface temperature and determine maximum operating temperature.",
+          "media": {"src": "/media/zipline/ptc-heater-test.png", "alt": "Bench setup for PTC heater characterization testing"}
+        },
+        {
+          "title": "Sheet-Metal Mounting Hardware",
+          "text": "Designed mounting brackets and supporting hardware for auxiliary components, with an emphasis on manufacturability, packaging, and integration."
+        }
+      ]
+    },
+    "media": [],
+    "sections": []
   },
   {
     "slug": "third-thumb",

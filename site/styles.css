@@ -391,6 +391,66 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
 .zipline-list strong { display: block; font-family: var(--display); font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 500; letter-spacing: -.04em; line-height: 1; }
 .zipline-list small { display: block; max-width: 45rem; margin-top: .75rem; color: rgba(255,255,255,.72); font-size: .88rem; }
 
+.zipline-story { overflow-x: clip; }
+.zipline-hero { padding-bottom: clamp(4rem, 7vw, 6rem); }
+.zipline-hero .case-lede { max-width: 47rem; }
+.zipline-hero .case-meta { margin-bottom: 1.75rem; }
+.zipline-feature {
+  display: grid;
+  grid-template-columns: minmax(15rem, .72fr) minmax(0, 1.28fr);
+  column-gap: clamp(3rem, 8vw, 10rem);
+  row-gap: clamp(2.5rem, 5vw, 5rem);
+  padding-top: clamp(5rem, 9vw, 9rem);
+  padding-bottom: clamp(5rem, 9vw, 9rem);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.zipline-feature:nth-of-type(odd) { background: #e7e6e1; }
+.zipline-feature__heading h2 {
+  margin: 1rem 0 0;
+  max-width: 33rem;
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 5.4vw, 5.8rem);
+  font-weight: 500;
+  letter-spacing: -.06em;
+  line-height: .9;
+}
+.zipline-feature__copy { max-width: 45rem; }
+.zipline-feature__summary { margin: 0 0 1.35rem; font-size: clamp(1.2rem, 2vw, 1.65rem); line-height: 1.35; letter-spacing: -.025em; }
+.zipline-feature__copy > p:last-child:not(.zipline-feature__summary) { margin: 0; color: #565a5b; font-size: 1rem; line-height: 1.65; }
+.zipline-metrics {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.zipline-metrics div { min-height: 9rem; padding: 1.1rem; border-right: 1px solid var(--line); }
+.zipline-metrics div:last-child { border-right: 0; }
+.zipline-metrics strong, .zipline-metrics span { display: block; }
+.zipline-metrics strong { margin-bottom: 2.25rem; font-family: var(--display); font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 500; letter-spacing: -.045em; line-height: 1; }
+.zipline-metrics span { max-width: 13rem; color: #65696a; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; }
+.zipline-feature__media { grid-column: 1 / -1; display: grid; gap: .8rem; }
+.zipline-feature__media--2 { grid-template-columns: 1.12fr .88fr; }
+.zipline-media { position: relative; margin: 0; overflow: hidden; background: #dfe0dc; }
+.zipline-feature__media--2 .zipline-media { aspect-ratio: 4 / 5; }
+.zipline-feature__media--1 .zipline-media { aspect-ratio: 16 / 9; }
+.zipline-feature:nth-of-type(3) .zipline-feature__media--1 { width: min(100%, 50rem); margin-left: auto; }
+.zipline-feature:nth-of-type(3) .zipline-feature__media--1 .zipline-media { aspect-ratio: 4 / 3; }
+.zipline-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.zipline-media img[hidden] { display: none; }
+.zipline-media figcaption { position: absolute; left: .75rem; bottom: .75rem; padding: .5rem .6rem; background: rgba(11,13,14,.84); color: #fff; font-size: .72rem; }
+.zipline-additional { padding-top: clamp(5rem, 9vw, 8rem); padding-bottom: clamp(5rem, 9vw, 8rem); background: var(--paper); }
+.zipline-additional__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.zipline-additional__card { min-height: 24rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.zipline-additional__card > .zipline-media { aspect-ratio: 4 / 3; border-bottom: 1px solid var(--line); background: #e7e6e1; }
+.zipline-additional__card > div { padding: 1.35rem; }
+.zipline-additional__index { color: var(--blue); font-size: .7rem; font-weight: 700; letter-spacing: .08em; }
+.zipline-additional__card h3 { margin: 3.5rem 0 1rem; font-family: var(--display); font-size: clamp(1.65rem, 2.6vw, 2.7rem); font-weight: 500; letter-spacing: -.045em; line-height: .95; }
+.zipline-additional__card p { margin: 0; color: #5c6061; font-size: .9rem; line-height: 1.55; }
+.zipline-additional__card:not(.has-media) { display: flex; align-items: flex-end; }
+.zipline-additional__card:not(.has-media) > div { width: 100%; }
+
 .additional-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .additional-card { position: relative; min-height: 22rem; padding: 1.5rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s ease, color .25s ease; }
 .additional-card:hover { background: var(--ink); color: var(--white); }
@@ -671,6 +731,9 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   .case-section__content { grid-column: 2; }
   .story-block { gap: 3rem; }
   .nemo-engineering { grid-template-columns: 1fr; gap: 5rem; }
+  .zipline-feature { column-gap: 3rem; }
+  .zipline-additional__grid { grid-template-columns: 1fr 1fr; }
+  .zipline-additional__card:last-child { grid-column: 1 / -1; min-height: 18rem; }
 }
 
 @media (max-width: 680px) {
@@ -708,6 +771,17 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
   .zipline-role div:last-child { border-bottom: 0; }
   .zipline-role span { margin-bottom: 1.5rem; }
   .zipline-list a { grid-template-columns: 2.5rem 1fr auto; }
+  .zipline-feature { grid-template-columns: 1fr; gap: 2rem; }
+  .zipline-feature__media--2 { grid-template-columns: 1fr; }
+  .zipline-feature__media--2 .zipline-media { aspect-ratio: 4 / 5; }
+  .zipline-feature__media--1 .zipline-media,
+  .zipline-feature:nth-of-type(3) .zipline-feature__media--1 .zipline-media { aspect-ratio: 4 / 3; }
+  .zipline-metrics { grid-template-columns: 1fr; }
+  .zipline-metrics div { min-height: 7rem; border-right: 0; border-bottom: 1px solid var(--line); }
+  .zipline-metrics div:last-child { border-bottom: 0; }
+  .zipline-metrics strong { margin-bottom: 1.25rem; }
+  .zipline-additional__grid { grid-template-columns: 1fr; }
+  .zipline-additional__card:last-child { grid-column: auto; }
   .additional-grid { grid-template-columns: 1fr; }
   .additional-card { min-height: 18rem; }
   .page-hero h1, .collection-hero h1, .case-hero h1, .not-found h1 { font-size: clamp(3rem, 14vw, 5rem); }
