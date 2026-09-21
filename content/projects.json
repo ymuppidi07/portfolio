@@ -83,7 +83,7 @@
       "locomotion": {
         "eyebrow": "Ground testing",
         "title": "NEMO Shuffling",
-        "text": "Ground testing moved the project beyond CAD and simulation, exposing the complete mechanical platform to real contact, balance, and integration constraints. Unfornutately, the motors we used for NEMO were not powerful enough for walking causing us to pivot to Ariel, a larger humanoid robot with more powerful actuators.",
+        "text": "We were able to finally move the project beyond CAD and simulation, and expose NEMO to the real world. Unfortunately, the motors we used for NEMO were not powerful enough for walking causing us to pivot to Ariel, a larger humanoid robot with more powerful actuators.",
         "video": {"type": "video", "src": "/media/nemo/nemo-shuffling.mp4", "caption": "NEMO physical ground-motion test"}
       }
     },
