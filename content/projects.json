@@ -29,7 +29,7 @@
     "priority": 2,
     "year": "2025 — Present",
     "organization": "Purdue Trace Labs / Humanoid Robotics Club",
-    "role": "Co-Developer · Mechanical Design",
+    "role": "Engineer",
     "summary": "NEMO is a small-scale humanoid research platform developed for biped locomotion and rapid mechanical iteration.",
     "lede": "A 20-DOF humanoid research platform developed for biped locomotion and rapid mechanical iteration.",
     "tools": ["Humanoid Robotics", "Mechanical Design", "FEA", "MuJoCo", "Prototyping"],
@@ -41,11 +41,11 @@
         {"value": "20", "label": "Total DOF"},
         {"value": "12", "label": "Lower-body DOF"},
         {"value": "8", "label": "Upper-body DOF"},
-        {"value": "Direct", "label": "Drive architecture"}
+        {"value": "Direct Drive", "label": "Actuation"}
       ],
       "architecture": {
         "eyebrow": "Mechanical architecture",
-        "title": "Simulation shaped the hardware from the beginning.",
+        "title": "Hardware in the Loop",
         "text": "The lower body uses Unitree GO-M8010-6 actuators across three hip DOF, one knee DOF, and two ankle DOF per leg. We used a largely direct-drive architecture to limit gearing and mechanical complexity. Early block models established proportions, joint layout, mass distribution, and actuator demand; torque analysis then showed that several pitch joints required dual-motor configurations. Excessive width and center-of-mass placement in earlier concepts increased ankle torque, driving narrower layouts and major revisions to the hip, knee, and ankle architecture.",
         "media": [
           {"type": "image", "src": "/media/nemo/nemo-final-lower-body-cad.png", "alt": "Final NEMO lower-body CAD assembly", "caption": "Current lower-body architecture"},
@@ -56,7 +56,7 @@
       "engineering": {
         "analysis": {
           "eyebrow": "Structural optimization",
-          "title": "Removing mass while preserving useful load paths.",
+          "title": "Stress & Structural Analysis",
           "text": "ANSYS FEA and hand calculations were used on key structural parts to identify where material could be removed while maintaining acceptable performance. Later revisions standardized parts, simplified motor housings, improved load paths, and moved appropriate non-load-bearing components from aluminum to printed polymers.",
           "media": [
             {"type": "image", "src": "/media/nemo/nemo-structural-fea.png", "alt": "FEA visualization of a NEMO structural component", "caption": "Structural analysis"},
@@ -65,7 +65,7 @@
         },
         "upperBody": {
           "eyebrow": "Upper body",
-          "title": "Human-like motion without unnecessary upper-body mass.",
+          "title": "Animatronic Design",
           "text": "The upper body adds eight DOF across the shoulders, elbows, and neck. Its structure was developed around low mass, mechanical simplicity, and integration with the locomotion platform so the lower-body actuators were not unnecessarily overloaded.",
           "media": [
             {"type": "image", "src": "/media/nemo/nemo-upper-body-cad.png", "alt": "NEMO upper-body CAD assembly", "caption": "Upper-body CAD"},
@@ -74,16 +74,16 @@
         }
       },
       "testing": {
-        "eyebrow": "Test stand + Sim-to-Real",
-        "title": "A protected environment for physical locomotion development.",
+        "eyebrow": "Test Stand",
+        "title": "Sim-to-Real",
         "text": "We designed and built an approximately six-foot-tall 80/20 test stand for safe locomotion work. Straps and a custom aluminum support arrangement provide fall protection while avoiding unnecessary restriction of the robot's motion. MuJoCo remained part of the development loop for gait stability, joint loading, and mechanical feasibility; the video shows the physical robot following locomotion commanded from simulation.",
         "image": {"type": "image", "src": "/media/nemo/nemo-test-stand.png", "alt": "Full NEMO 80/20 locomotion test stand", "caption": "80/20 test stand"},
         "video": {"type": "video", "src": "/media/nemo/nemo-sim-to-real.mp4", "caption": "Simulation-commanded locomotion on the physical test stand"}
       },
       "locomotion": {
         "eyebrow": "Ground testing",
-        "title": "From mechanical iteration to physical motion.",
-        "text": "Ground testing moved the project beyond CAD and simulation, exposing the complete mechanical platform to real contact, balance, and integration constraints.",
+        "title": "NEMO Shuffling",
+        "text": "Ground testing moved the project beyond CAD and simulation, exposing the complete mechanical platform to real contact, balance, and integration constraints. Unfornutately, the motors we used for NEMO were not powerful enough for walking causing us to pivot to Ariel, a larger humanoid robot with more powerful actuators.",
         "video": {"type": "video", "src": "/media/nemo/nemo-shuffling.mp4", "caption": "NEMO physical ground-motion test"}
       }
     },
