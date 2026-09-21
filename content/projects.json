@@ -102,12 +102,12 @@
     "organization": "Zipline",
     "role": "Mechanical Engineering Intern",
     "summary": "Selected mechanical design, prototyping, test engineering, and hardware-integration work for UAV and ground-support systems.",
-    "lede": "During my internship at Zipline, I worked across mechanical design, prototyping, test engineering, manufacturing, and hardware integration for UAV and ground-support systems.",
+    "lede": "During my internship at Zipline, I worked across mechanical design, prototyping, test engineering, manufacturing, and hardware integration for UAV and ground-support systems. Below is some of the work I did with my time at Zipline",
     "tools": ["Mechanical Design", "NX", "Prototyping", "Test Engineering", "Manufacturing"],
     "pageLayout": "zipline",
     "cover": {"src": "/media/zipline/drone-transport-aircraft.png", "alt": "Drone transport fixture supporting an aircraft on a scissor lift"},
     "ziplineStory": {
-      "publicNote": "Selected public work · Proprietary details intentionally omitted",
+      "publicNote": "Proprietary details intentionally omitted",
       "featured": [
         {
           "eyebrow": "Featured project 01",
@@ -156,7 +156,8 @@
         },
         {
           "title": "Sheet-Metal Mounting Hardware",
-          "text": "Designed mounting brackets and supporting hardware for auxiliary components, with an emphasis on manufacturability, packaging, and integration."
+          "text": "Designed mounting brackets and supporting hardware for auxiliary components, with an emphasis on manufacturability, packaging, and integration.",
+          "media": {"src": "/media/zipline/sheet-metal-mounting-hardware.png", "alt": "Sheet-metal mounting hardware installed around a structural rail"}
         }
       ]
     },
