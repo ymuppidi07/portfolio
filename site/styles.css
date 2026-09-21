@@ -577,6 +577,7 @@ a:hover > .text-link svg, .button-link:hover svg, .additional-card:hover svg, .z
 .nemo-locomotion { background: #e7e6e1; }
 .nemo-locomotion .nemo-section__copy { margin-left: 25%; }
 .nemo-media--payoff { margin-top: 3.5rem; aspect-ratio: 16 / 9; background: var(--ink); }
+.nemo-media--payoff video { object-fit: contain; }
 
 .case-section { display: grid; grid-template-columns: .2fr .55fr 1fr; gap: clamp(1.5rem, 4vw, 5rem); padding-top: 7rem; padding-bottom: 7rem; border-bottom: 1px solid var(--line); }
 .case-section:nth-of-type(odd) { background: #e7e6e1; }
