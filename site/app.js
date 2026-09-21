@@ -227,7 +227,7 @@ const renderNemoMedia = (media, className = '') => {
   </figure>`;
   return `<figure class="nemo-media media-item media-item--image is-empty ${className}" data-optional-image>
     <span class="media-item__placeholder">Image to be added</span>
-    <img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt || '')}" loading="lazy" hidden />
+    <img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt || '')}" loading="eager" hidden />
     ${media.caption ? `<figcaption>${escapeHtml(media.caption)}</figcaption>` : ''}
   </figure>`;
 };
