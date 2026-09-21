@@ -66,7 +66,7 @@ Card and overview image slots are already configured. Add a real image using one
 | Project | Card image | Project-page overview image |
 | --- | --- | --- |
 | Ariel | `public/media/ariel/ariel-cover.avif` | Work-in-progress page intentionally has no overview image yet |
-| NEMO | `public/media/nemo/nemo-cover.avif` | `public/media/nemo/nemo-overview.avif` |
+| NEMO | `public/media/nemo/nemo-current-robot.jpg` | Narrative page uses the curated NEMO images and videos listed below |
 | Zipline Projects | `public/media/zipline-projects/zipline-projects-cover.avif` | `public/media/zipline-projects/zipline-projects-overview.avif` |
 | Third Thumb | `public/media/third-thumb/third-thumb-cover.avif` | Narrative page uses the supplied `third-thumb-*.png` files in the same folder |
 | VTOL Aircraft | `public/media/vtol/vtol-cover.avif` | Narrative page uses the supplied `vtol-*.png` files in the same folder |
@@ -85,6 +85,22 @@ Several project-section image slots are also ready:
 - `public/media/harry/harry-build.jpg`
 
 You do not need to edit JSON when using those exact filenames. The file contents must match their extension: these `.avif` cover and overview files must contain real AVIF image data.
+
+NEMO has a detailed narrative layout. Its text and technical metadata are in `content/projects.json` under `"slug": "nemo"` → `lede`, `summary`, `tools`, and `nemoStory`. Its curated page assets are all in `public/media/nemo/`:
+
+- `nemo-current-robot.jpg`
+- `nemo-final-lower-body-cad.png`
+- `nemo-early-lower-body-cad.png`
+- `nemo-design-progression.png`
+- `nemo-structural-fea.png`
+- `nemo-manufactured-prototype.png`
+- `nemo-upper-body-cad.png`
+- `nemo-upper-body-prototype.png`
+- `nemo-test-stand.png`
+- `nemo-sim-to-real.mp4`
+- `nemo-shuffling.mp4`
+
+To replace an asset without changing JSON, replace the file with another image or MP4 using the same filename. To use a different filename, update the matching `src` inside `nemoStory`. Both videos are muted MP4 files configured to loop while visible, play inline on mobile, and retain playback controls. New images or videos can be added to `public/media/nemo/` and referenced from the appropriate `nemoStory` media entry without editing React.
 
 Third Thumb has a concise narrative layout. Its page text is in `content/projects.json` under `"slug": "third-thumb"` → `lede`, `summary`, and `narrative`. Its current page images are:
 

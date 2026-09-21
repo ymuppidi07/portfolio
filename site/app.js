@@ -219,6 +219,97 @@ const renderStoryMedia = (media, className = '') => {
   </figure>`;
 };
 
+const renderNemoMedia = (media, className = '') => {
+  if (!media?.src) return '';
+  if (media.type === 'video') return `<figure class="nemo-media nemo-media--video ${className}">
+    <video src="${escapeHtml(media.src)}" preload="metadata" muted loop playsinline controls data-autoplay-video></video>
+    ${media.caption ? `<figcaption>${escapeHtml(media.caption)}</figcaption>` : ''}
+  </figure>`;
+  return `<figure class="nemo-media media-item media-item--image is-empty ${className}" data-optional-image>
+    <span class="media-item__placeholder">Image to be added</span>
+    <img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt || '')}" loading="lazy" hidden />
+    ${media.caption ? `<figcaption>${escapeHtml(media.caption)}</figcaption>` : ''}
+  </figure>`;
+};
+
+const renderNemoProject = (project, projects) => {
+  const story = project.nemoStory || {};
+  const visible = projects
+    .filter((item) => item.status === 'visible' && item.group !== 'zipline')
+    .sort((a, b) => a.priority - b.priority);
+  const currentIndex = visible.findIndex((item) => item.slug === project.slug);
+  const next = visible[(currentIndex + 1) % visible.length];
+  const meta = [];
+  if (project.role) meta.push(`<div><span>Focus</span><strong>${escapeHtml(project.role)}</strong></div>`);
+  if (project.tools?.length) meta.push(`<div><span>Tools</span><strong>${project.tools.map(escapeHtml).join(' · ')}</strong></div>`);
+  const stats = (story.stats || []).map((item) => `<div><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></div>`).join('');
+  const mediaGroup = (media = [], className = '') => media.map((item, index) => renderNemoMedia(item, `${className} ${index === 0 ? 'is-primary' : ''}`)).join('');
+  const architecture = story.architecture || {};
+  const engineering = story.engineering || {};
+  const testing = story.testing || {};
+  const locomotion = story.locomotion || {};
+  main.innerHTML = `
+    <article class="case-study nemo-story">
+      <header class="case-hero section-dark page-pad">
+        <div class="case-hero__top"><a href="/projects/">← All projects</a><span>${escapeHtml(project.year)}</span></div>
+        <p class="eyebrow">${escapeHtml(project.organization)}</p>
+        <h1>${escapeHtml(project.title)}</h1>
+        <p class="case-lede">${escapeHtml(project.lede)}</p>
+        ${meta.length ? `<div class="case-meta">${meta.join('')}</div>` : ''}
+        ${stats ? `<div class="nemo-stats">${stats}</div>` : ''}
+        <div class="nemo-hero-media">${renderNemoMedia(story.heroMedia)}</div>
+      </header>
+
+      <section class="nemo-section nemo-architecture page-pad">
+        <div class="nemo-section__copy">
+          <p class="eyebrow">${escapeHtml(architecture.eyebrow || '')}</p>
+          <h2>${escapeHtml(architecture.title || '')}</h2>
+          <p>${escapeHtml(architecture.text || '')}</p>
+        </div>
+        <div class="nemo-architecture__media">${mediaGroup(architecture.media)}</div>
+      </section>
+
+      <section class="nemo-section nemo-engineering page-pad">
+        <article class="nemo-engineering__column">
+          <div class="nemo-section__copy">
+            <p class="eyebrow">${escapeHtml(engineering.analysis?.eyebrow || '')}</p>
+            <h2>${escapeHtml(engineering.analysis?.title || '')}</h2>
+            <p>${escapeHtml(engineering.analysis?.text || '')}</p>
+          </div>
+          <div class="nemo-pair">${mediaGroup(engineering.analysis?.media)}</div>
+        </article>
+        <article class="nemo-engineering__column">
+          <div class="nemo-section__copy">
+            <p class="eyebrow">${escapeHtml(engineering.upperBody?.eyebrow || '')}</p>
+            <h2>${escapeHtml(engineering.upperBody?.title || '')}</h2>
+            <p>${escapeHtml(engineering.upperBody?.text || '')}</p>
+          </div>
+          <div class="nemo-pair">${mediaGroup(engineering.upperBody?.media)}</div>
+        </article>
+      </section>
+
+      <section class="nemo-section nemo-testing page-pad">
+        <div class="nemo-section__copy">
+          <p class="eyebrow">${escapeHtml(testing.eyebrow || '')}</p>
+          <h2>${escapeHtml(testing.title || '')}</h2>
+          <p>${escapeHtml(testing.text || '')}</p>
+        </div>
+        <div class="nemo-testing__media">${renderNemoMedia(testing.image)}${renderNemoMedia(testing.video, 'nemo-media--result')}</div>
+      </section>
+
+      <section class="nemo-section nemo-locomotion page-pad">
+        <div class="nemo-section__copy">
+          <p class="eyebrow">${escapeHtml(locomotion.eyebrow || '')}</p>
+          <h2>${escapeHtml(locomotion.title || '')}</h2>
+          <p>${escapeHtml(locomotion.text || '')}</p>
+        </div>
+        ${renderNemoMedia(locomotion.video, 'nemo-media--payoff')}
+      </section>
+
+      <nav class="next-project page-pad" aria-label="Next project"><span>Next project</span><a href="${pathForProject(next)}"><strong>${escapeHtml(next.title)}</strong>${arrow}</a></nav>
+    </article>`;
+};
+
 const renderNarrativeProject = (project, projects) => {
   const story = project.narrative || {};
   const meta = [];
@@ -268,6 +359,7 @@ const renderProject = (projects) => {
   const project = projects.find((item) => item.slug === slug);
   if (!project || project.status !== 'visible') return renderNotFound();
   if (project.projectState === 'work-in-progress') return renderWorkInProgressProject(project);
+  if (project.pageLayout === 'nemo') return renderNemoProject(project, projects);
   if (project.pageLayout === 'narrative') return renderNarrativeProject(project, projects);
 
   const visible = projects
@@ -331,6 +423,17 @@ const initOptionalImages = () => {
   });
 };
 
+const initAutoplayVideos = () => {
+  const videos = document.querySelectorAll('[data-autoplay-video]');
+  if (!videos.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.play().catch(() => {});
+    else entry.target.pause();
+  }), { threshold: 0.55 });
+  videos.forEach((video) => observer.observe(video));
+};
+
 try {
   const { site, projects } = await loadData();
   renderHeader(site);
@@ -342,6 +445,7 @@ try {
   else if (page === 'project') renderProject(projects);
   else renderNotFound();
   initOptionalImages();
+  initAutoplayVideos();
   initReveal();
 } catch (error) {
   console.error(error);
